@@ -1,0 +1,92 @@
+        <!-- Footer Section -->
+        <footer class="bg-[#232323] text-white pt-16 pb-8">
+          <div class="main-container mx-auto flex flex-col md:flex-row gap-12 md:gap-0 justify-between items-start px-4">
+            <!-- Kolom Kiri - Logo & Deskripsi -->
+            <div class="w-full md:w-1/3 lg:w-2/5 flex flex-col space-y-6">
+              <div class="flex items-center gap-3">
+                <a href="./index.html" class="text-3xl font text-primary">VISIT NUSA</a>
+              </div>
+              <p class="text-base text-white/80 max-w-xs font-light">Great platform for the job seeker that passionate about startups. Find your dream job easier.</p>
+            </div>
+            <!-- Kolom Tengah - Menu -->
+            <div class="w-full md:w-2/3 flex flex-col md:flex-row gap-12 md:gap-20 justify-between">
+              <div>
+                <h4 class="text-base font-semibold mb-4">About</h4>
+                <ul class="space-y-2 text-base font-light text-white/80">
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Companies</a></li>
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Pricing</a></li>
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Terms</a></li>
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Advice</a></li>
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Privacy Policy</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-base font-semibold mb-4">Resources</h4>
+                <ul class="space-y-2 text-base font-light text-white/80">
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Help Docs</a></li>
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Guide</a></li>
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Updates</a></li>
+                  <li><a href="#" class="hover:text-[#FFB300] transition">Contact Us</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-base font-semibold mb-4">Get job notifications</h4>
+                <p class="text-white/80 mb-4 text-base font-light">The latest job news, articles, sent to your inbox weekly.</p>
+                <form class="flex gap-2">
+                  <input class="bg-white px-4 py-3 rounded-md text-gray-700 font-medium placeholder:text-gray-400 w-[270px] placeholder:font-light placeholder:text-base focus:outline-none" type="email" placeholder="Email Address" />
+                  <button class="bg-[#FFB300] hover:bg-[#FFB300] px-6 py-3 rounded-md text-black font-semibold transition" type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <hr class="my-10 border-t border-white/20" />
+          <div class="main-container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+            <span class="text-sm text-white/60 mb-4 md:mb-0">2021 @ VisitNusaJogja. All rights reserved.</span>
+            <div class="flex gap-4 justify-center">
+              <!-- Facebook -->
+              <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="15" viewBox="0 0 7 12" fill="none">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.35154 12V6.6H5.98984L6.25745 4.2H4.35154V3.03105C4.35154 2.41305 4.36732 1.8 5.23029 1.8H6.10437V0.084082C6.10437 0.058282 5.35356 0 4.594 0C3.00769 0 2.01442 0.994317 2.01442 2.82012V4.2H0.261597V6.6H2.01442V12H4.35154Z"
+                    fill="#FFB300" />
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 12" fill="none">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.74397 0.0736373C2.76791 0.117707 1.92192 0.356504 1.2388 1.03721C0.553299 1.72149 0.31763 2.57141 0.273481 3.53798C0.246036 4.14127 0.0855571 8.69895 0.550913 9.89421C0.86473 10.7006 1.4828 11.3206 2.29598 11.6356C2.67543 11.7833 3.10858 11.8833 3.74397 11.9125C9.05678 12.1531 11.0262 12.0221 11.8567 9.89421C12.004 9.51544 12.1055 9.08237 12.1335 8.44812C12.3763 3.11801 12.0941 1.96268 11.1682 1.03721C10.4338 0.304095 9.56986 -0.194952 3.74397 0.0736373ZM3.79288 10.8405C3.21118 10.8143 2.89558 10.7173 2.68498 10.6357C2.15519 10.4297 1.75725 10.0331 1.55261 9.50603C1.19823 8.59782 1.31576 4.2843 1.34738 3.58632C1.37841 2.90263 1.51682 2.27779 1.99888 1.79541C2.59549 1.19986 3.3663 0.907991 8.61468 1.14502C9.29959 1.17599 9.92544 1.31421 10.4087 1.79541C11.0053 2.39095 11.3012 3.16823 11.0602 8.40007C11.0339 8.98073 10.9367 9.2958 10.855 9.50603C10.315 10.8907 9.07288 11.0829 3.79288 10.8405ZM8.67256 2.81376C8.67256 3.20802 8.99295 3.52861 9.3885 3.52861C9.78405 3.52861 10.105 3.20802 10.105 2.81376C10.105 2.41952 9.78405 2.09922 9.3885 2.09922C8.99295 2.09922 8.67256 2.41952 8.67256 2.81376ZM3.14019 5.99276C3.14019 7.68172 4.5118 9.05105 6.20379 9.05105C7.89577 9.05105 9.26738 7.68172 9.26738 5.99276C9.26738 4.3038 7.89577 2.93535 6.20379 2.93535C4.5118 2.93535 3.14019 4.3038 3.14019 5.99276ZM4.21528 5.99276C4.21528 4.89696 5.10543 4.0079 6.20379 4.0079C7.30215 4.0079 8.19229 4.89696 8.19229 5.99276C8.19229 7.08915 7.30215 7.97849 6.20379 7.97849C5.10543 7.97849 4.21528 7.08915 4.21528 5.99276Z"
+                    fill="#FFB300" />
+                </svg>
+              </a>
+              <!-- tiktok -->
+              <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 41 48" fill="none">
+                  <path
+                    d="M30.1451 0H22.0556V32.6956C22.0556 36.5913 18.9444 39.7913 15.0725 39.7913C11.2007 39.7913 8.08938 36.5913 8.08938 32.6956C8.08938 28.8696 11.1315 25.7391 14.8651 25.6V17.3913C6.63744 17.5304 0 24.2783 0 32.6956C0 41.1827 6.77571 48 15.1417 48C23.5075 48 30.2833 41.1131 30.2833 32.6956V15.9304C33.3255 18.1565 37.059 19.4783 41 19.5479V11.3391C34.9157 11.1304 30.1451 6.12173 30.1451 0Z"
+                    fill="#FFB300" />
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 44 41" fill="none">
+                  <path
+                    d="M34.6526 0.8078H41.3995L26.6594 17.6548L44 40.5797H30.4225L19.7881 26.6759L7.61989 40.5797H0.868864L16.6349 22.56L0 0.8078H13.9222L23.5348 13.5165L34.6526 0.8078ZM32.2846 36.5414H36.0232L11.8908 4.63406H7.87892L32.2846 36.5414Z"
+                    fill="#FFB300" />
+                </svg>
+              </a>
+              <!-- Twitter -->
+              <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 48 48" fill="none">
+                  <path
+                    d="M0 48L3.374 35.674C1.292 32.066 0.198 27.976 0.2 23.782C0.206 10.67 10.876 0 23.986 0C30.348 0.002 36.32 2.48 40.812 6.976C45.302 11.472 47.774 17.448 47.772 23.804C47.766 36.918 37.096 47.588 23.986 47.588C20.006 47.586 16.084 46.588 12.61 44.692L0 48ZM13.194 40.386C16.546 42.376 19.746 43.568 23.978 43.57C34.874 43.57 43.75 34.702 43.756 23.8C43.76 12.876 34.926 4.02 23.994 4.016C13.09 4.016 4.22 12.884 4.216 23.784C4.214 28.234 5.518 31.566 7.708 35.052L5.71 42.348L13.194 40.386ZM35.968 29.458C35.82 29.21 35.424 29.062 34.828 28.764C34.234 28.466 31.312 27.028 30.766 26.83C30.222 26.632 29.826 26.532 29.428 27.128C29.032 27.722 27.892 29.062 27.546 29.458C27.2 29.854 26.852 29.904 26.258 29.606C25.664 29.308 23.748 28.682 21.478 26.656C19.712 25.08 18.518 23.134 18.172 22.538C17.826 21.944 18.136 21.622 18.432 21.326C18.7 21.06 19.026 20.632 19.324 20.284C19.626 19.94 19.724 19.692 19.924 19.294C20.122 18.898 20.024 18.55 19.874 18.252C19.724 17.956 18.536 15.03 18.042 13.84C17.558 12.682 17.068 12.838 16.704 12.82L15.564 12.8C15.168 12.8 14.524 12.948 13.98 13.544C13.436 14.14 11.9 15.576 11.9 18.502C11.9 21.428 14.03 24.254 14.326 24.65C14.624 25.046 18.516 31.05 24.478 33.624C25.896 34.236 27.004 34.602 27.866 34.876C29.29 35.328 30.586 35.264 31.61 35.112C32.752 34.942 35.126 33.674 35.622 32.286C36.118 30.896 36.118 29.706 35.968 29.458Z"
+                    fill="#FFB300" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </footer>
