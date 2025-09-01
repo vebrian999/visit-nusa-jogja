@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ asset('src/output.css') }}" />
-    <link rel="stylesheet" href="{{ asset('resources/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('../../public/assets/style.css') }}" />
-    <link rel="stylesheet" href="../../public/css/style.css" />
-    @vite('resources/css/app.css')
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <title>Visit Nusa | Temukan Destinasi Wisata & Tour Terbaik di Indonesia</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Pastikan path file CSS sudah benar -->
+  <link rel="stylesheet" href="{{ asset('css/output.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+  <!-- Gunakan Vite untuk menangani Tailwind dan CSS lainnya -->
+  @vite('resources/css/app.css')
+  @vite(['resources/js/app.js', 'public/js/script.js'])
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>Visit Nusa | Temukan Destinasi Wisata & Tour Terbaik di Indonesia</title>
+</head>
+
   <body class="">
-    <header class="bg-secondary shadow-sm fixed w-full top-0 z-50">
-      <nav class="main-container mx-auto px-2 container md:px-16">
+   <header class="bg-secondary shadow-sm fixed w-full top-0 z-50">
+      <nav class="main-container mx-auto px-2  md:px-16">
         <div class="flex items-center justify-between h-20">
           <!-- Logo Section -->
           <div class="flex-shrink-0">
@@ -132,7 +135,7 @@
     <main>
       <div id="content">
         <!-- Hero Section Start -->
-        <section class="relative flex flex-col items-center justify-center h-screen py-16" style="background: url('./src/img/bg-hero-index.png') center/cover no-repeat">
+      <section class="relative flex flex-col items-center justify-center h-screen py-16" style="background: url('{{ asset('img/bg-hero-index.png') }}') center/cover no-repeat">
           <!-- Overlay warna primary dengan opacity 30% -->
           <div class="absolute inset-0 bg-primary opacity-10"></div>
           <!-- Konten utama hero -->
@@ -142,7 +145,7 @@
               <p class="text-lg text-white mb-8">Jelajahi ratusan destinasi dan paket wisata dari penyedia terpercaya, cocok untuk solo traveler, liburan keluarga, atau petualangan bersama teman.</p>
             </div>
             <!-- Search Bar Start -->
-            <div class="main-container w-full mt-2">
+            <div class="main-container w-full mt-2  md:px-16">
               <form class="bg-white rounded-lg shadow flex flex-col md:flex-row items-center gap-2 md:gap-0 px-4 py-4 mb-6">
                 <!-- Search Input -->
                 <div class="flex items-center flex-1 border-r-2 border-gray-200 pr-4">
@@ -228,7 +231,7 @@
               <!-- Card 1 -->
               <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
                 <div class="relative">
-                  <img src="./src/img/img-card.png" alt="Bali" class="w-full h-[212px] object-cover" />
+                  <img src="{{ asset('img/img-card.png') }}" alt="Bali" class="w-full h-[212px] object-cover" />
                   <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
                       <path
@@ -278,7 +281,7 @@
               <!-- Card 2 -->
               <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
                 <div class="relative">
-                  <img src="" alt="Bali" class="w-full h-[212px] object-cover" />
+                  <img src="{{ asset('img/img-card.png') }}" alt="Bali" class="w-full h-[212px] object-cover" />
                   <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
                       <path
@@ -328,7 +331,7 @@
               <!-- Card 3 -->
               <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
                 <div class="relative">
-                  <img src="./src/img/img-card.png" alt="Jakarta" class="w-full h-[212px] object-cover" />
+                  <img src="{{ asset('img/img-card.png') }}" alt="Jakarta" class="w-full h-[212px] object-cover" />
                   <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
                       <path
@@ -377,7 +380,7 @@
 
               <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
                 <div class="relative">
-                  <img src="./src/img/img-card.png" alt="Jakarta" class="w-full h-[212px] object-cover" />
+                  <img src="{{ asset('img/img-card.png') }}" alt="Jakarta" class="w-full h-[212px] object-cover" />
                   <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
                       <path
@@ -437,7 +440,7 @@
               <!-- Card 1 -->
               <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
                 <div class="relative">
-                  <img src="./src/img/img-card.png" alt="Bali" class="w-full h-[212px] object-cover" />
+                  <img src="{{ asset('img/img-card.png') }}" alt="Bali" class="w-full h-[212px] object-cover" />
                   <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
                       <path
@@ -487,7 +490,7 @@
               <!-- Card 2 -->
               <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
                 <div class="relative">
-                  <img src="./src/img/img-card.png" alt="Bali" class="w-full h-[212px] object-cover" />
+                  <img src="{{ asset('img/img-card.png') }}" alt="Bali" class="w-full h-[212px] object-cover" />
                   <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
                       <path
@@ -537,7 +540,7 @@
               <!-- Card 3 -->
               <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
                 <div class="relative">
-                  <img src="./src/img/img-card.png" alt="Jakarta" class="w-full h-[212px] object-cover" />
+                  <img src="{{ asset('img/img-card.png') }}" alt="Jakarta" class="w-full h-[212px] object-cover" />
                   <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
                       <path
@@ -586,7 +589,7 @@
 
               <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
                 <div class="relative">
-                  <img src="./src/img/img-card.png" alt="Jakarta" class="w-full h-[212px] object-cover" />
+                  <img src="{{ asset('img/img-card.png') }}" alt="Jakarta" class="w-full h-[212px] object-cover" />
                   <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
                       <path
@@ -640,7 +643,7 @@
         <section class="py-12 mx-auto main-container container">
           <div class="relative overflow-hidden bg-white rounded-2xl" style="height: 568px">
             <!-- Background Image -->
-            <img src="./src/img/banner-index.png" alt="" class="absolute inset-0 h-full w-full object-cover object-center rounded-2xl z-0" />
+            <img src="{{ asset('img/banner-index.png') }}" alt="" class="absolute inset-0 h-full w-full object-cover object-center rounded-2xl z-0" />
 
             <!-- Banner Content -->
             <div class="relative z-30 flex flex-col items-center justify-center h-full px-6 text-center">
@@ -669,7 +672,7 @@
             <div class="flex gap-6">
               <!-- Card 1 -->
               <div class="group relative rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer bg-white" style="width: 420px; height: 281px">
-                <img src="./src/img/img-card.png" alt="Paket Honeymoon Romantis" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
+                <img src="{{ asset('img/img-card.png') }}" alt="Paket Honeymoon Romantis" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-0 transition-all duration-300"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <span class="text-white text-lg font-semibold group-hover:opacity-0 transition-all duration-300">Paket Honeymoon Romantis</span>
@@ -677,7 +680,7 @@
               </div>
               <!-- Card 2 -->
               <div class="group relative rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer bg-white" style="width: 420px; height: 281px">
-                <img src="./src/img/img-card.png" alt="Paket Tour Jogja Komplit" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
+                <img src="{{ asset('img/img-card.png') }}" alt="Paket Tour Jogja Komplit" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-0 transition-all duration-300"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <span class="text-white text-lg font-semibold group-hover:opacity-0 transition-all duration-300">Paket Tour Jogja Komplit</span>
@@ -685,7 +688,7 @@
               </div>
               <!-- Card 3 -->
               <div class="group relative rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer bg-white" style="width: 420px; height: 281px">
-                <img src="./src/img/img-card.png" alt="Paket Wisata Jogja Hemat" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
+                <img src="{{ asset('img/img-card.png') }}" alt="Paket Wisata Jogja Hemat" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-0 transition-all duration-300"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <span class="text-white text-lg font-semibold group-hover:opacity-0 transition-all duration-300">Paket Wisata Jogja Hemat</span>
@@ -696,7 +699,7 @@
             <div class="flex gap-6 mt-6">
               <!-- Card 4 -->
               <div class="group relative rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer bg-white" style="width: 310px; height: 280px">
-                <img src="./src/img/img-card.png" alt="Paket Wisata Jogja Sehari Penuh" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
+                <img src="{{ asset('img/img-card.png') }}" alt="Paket Wisata Jogja Sehari Penuh" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-0 transition-all duration-300"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <span class="text-white text-lg font-semibold group-hover:opacity-0 transition-all duration-300">Paket Wisata Jogja Sehari Penuh</span>
@@ -704,7 +707,7 @@
               </div>
               <!-- Card 5 -->
               <div class="group relative rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer bg-white" style="width: 310px; height: 280px">
-                <img src="./src/img/img-card.png" alt="Paket Petualangan Alam Jogja" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
+                <img src="{{ asset('img/img-card.png') }}" alt="Paket Petualangan Alam Jogja" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-0 transition-all duration-300"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <span class="text-white text-lg font-semibold group-hover:opacity-0 transition-all duration-300">Paket Petualangan Alam Jogja</span>
@@ -712,7 +715,7 @@
               </div>
               <!-- Card 6 -->
               <div class="group relative rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer bg-white" style="width: 310px; height: 280px">
-                <img src="./src/img/img-card.png" alt="Paket Kuliner & Belanja Jogja" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
+                <img src="{{ asset('img/img-card.png') }}" alt="Paket Kuliner & Belanja Jogja" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-0 transition-all duration-300"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <span class="text-white text-lg font-semibold group-hover:opacity-0 transition-all duration-300">Paket Kuliner & Belanja Jogja</span>
@@ -720,7 +723,7 @@
               </div>
               <!-- Card 7 -->
               <div class="group relative rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300 cursor-pointer bg-white" style="width: 310px; height: 280px">
-                <img src="./src/img/img-card.png" alt="Paket Jogja & Candi Borobudur-Prambanan" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
+                <img src="{{ asset('img/img-card.png') }}" alt="Paket Jogja & Candi Borobudur-Prambanan" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-0 transition-all duration-300"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <span class="text-white text-lg text-center font-semibold group-hover:opacity-0 transition-all duration-300">Paket Jogja & Candi Borobudur-Prambanan</span>
@@ -800,7 +803,7 @@
                 </svg>
                 100% Trusted
               </span>
-              <img class="rounded-3xl" src="./src/img/right side.png" alt="" />
+      <img class="rounded-3xl" src="{{ asset('img/right side.png') }}" alt="" />
             </div>
           </div>
         </section>
@@ -1081,5 +1084,5 @@
       </div>
     </main>
   </body>
-  <script src="./src/script.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </html>
