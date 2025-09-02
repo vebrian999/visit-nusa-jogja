@@ -14,15 +14,16 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
-  <body class="">
+  <body class="bg-white">
     @include('includes.navbar')
 
     <main>
       <div id="content">
         @yield('content')
       </div>
-      @include('includes.footer')
+
     </main>
+          @include('includes.footer')
     @stack('scripts')
   </body>
     <script src="{{ asset('js/script.js') }}"></script>

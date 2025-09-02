@@ -1,6 +1,6 @@
-<header class="bg-secondary shadow-sm fixed w-full top-0 z-50">
-            <nav class="main-container mx-auto px-2 md:px-16">
-                <div class="flex items-center justify-between h-20">
+<header class="  shadow-sm ">
+            <nav class=" bg-secondary sticky top-0 z-50 ">
+                <div class="flex items-center justify-between h-20 main-container mx-auto md:px-16">
                     <!-- Logo Section -->
                     <div class="flex-shrink-0">
                         <a
