@@ -11,6 +11,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <title>Visit Nusa | Temukan Destinasi Wisata & Tour Terbaik di Indonesia</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
   <body class="">

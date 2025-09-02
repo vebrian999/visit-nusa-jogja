@@ -152,10 +152,13 @@
                                         stroke-linejoin="round"
                                     />
                                 </svg>
-                                <span
-                                    class="text-white mt-1.5 text-sm font-normal"
-                                    >Profile</span
-                                >
+                                @auth
+                                    <span class="text-white mt-1.5 text-sm font-normal">
+                                        {{ \Str::limit(explode(' ', Auth::user()->name)[0], 7, '...') }}
+                                    </span>
+                                @else
+                                    <span class="text-white mt-1.5 text-sm font-normal">Profile</span>
+                                @endauth
                             </div>
 
                             <!-- Dropdown Menu -->
@@ -178,60 +181,28 @@
 
                                     <!-- Menu Items -->
                                     <div class="space-y-3">
-                                        <!-- Login/Sign up -->
-                                        <div
-                                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors group"
-                                        >
-                                            <div
-                                                class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors"
-                                            >
-                                                <!-- Icon Login - Masukan icon login disini -->
-                                                <svg
-                                                    class="w-4 h-4"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
-                                                        clip-rule="evenodd"
-                                                    />
+                                        <!-- Login/Sign up - Hanya tampil jika belum login -->
+                                        @guest
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors group" data-modal="auth">
+                                            <div class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                                 </svg>
                                             </div>
                                             <div class="flex-1">
-                                                <div
-                                                    class="text-sm font-medium text-gray-800"
-                                                >
-                                                    Log in or sign up
-                                                </div>
-                                                <div
-                                                    class="text-xs text-gray-500"
-                                                >
-                                                    Akses fitur lengkap
-                                                </div>
+                                                <div class="text-sm font-medium text-gray-800">Log in or sign up</div>
+                                                <div class="text-xs text-gray-500">Akses fitur lengkap</div>
                                             </div>
                                             <div class="text-gray-400">
-                                                <!-- Icon Arrow Right - Masukan icon arrow right disini -->
-                                                <svg
-                                                    class="w-4 h-4"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    viewBox="0 0 24 24"
-                                                >
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M9 5l7 7-7 7"
-                                                    />
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                                 </svg>
                                             </div>
                                         </div>
+                                        @endguest
 
                                         <!-- Settings -->
-                                        <div
-                                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors group"
-                                        >
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors group">
                                             <div
                                                 class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors"
                                             >
@@ -279,9 +250,7 @@
                                         </div>
 
                                         <!-- Appearance -->
-                                        <div
-                                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors group"
-                                        >
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors group">
                                             <div
                                                 class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors"
                                             >
@@ -328,39 +297,32 @@
                                             </div>
                                         </div>
 
-                                        <!-- Logout -->
-                                        <div
-                                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-50 cursor-pointer transition-colors group text-red-600"
-                                        >
-                                            <div
-                                                class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center group-hover:bg-red-500 group-hover:text-white transition-colors"
-                                            >
-                                                <!-- Icon Logout - Masukan icon logout disini -->
-                                                <svg
-                                                    class="w-4 h-4"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
-                                            </div>
-                                            <div class="flex-1">
-                                                <div
-                                                    class="text-sm font-medium"
-                                                >
-                                                    Logout
-                                                </div>
-                                                <div
-                                                    class="text-xs text-red-400"
-                                                >
-                                                    Keluar dari akun
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <!-- Logout - Hanya tampil jika sudah login -->
+                                        @auth
+                                            <form action="{{ route('auth.logout') }}" method="POST" id="logout-form">
+                                                @csrf
+                                                <button type="submit" class="flex w-full items-center text-left gap-3 p-3 rounded-lg hover:bg-red-50 cursor-pointer transition-colors group text-red-600">
+                                                    <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center group-hover:bg-red-500 group-hover:text-white transition-colors">
+                                                        <!-- Icon Logout - Masukan icon logout disini -->
+                                                        <svg
+                                                            class="w-4 h-4"
+                                                            fill="currentColor"
+                                                            viewBox="0 0 20 20"
+                                                        >
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                                                                clip-rule="evenodd"
+                                                            />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <div class="text-sm font-medium">Logout</div>
+                                                        <div class="text-xs text-red-400">Keluar dari akun</div>
+                                                    </div>
+                                                </button>
+                                            </form>
+                                        @endauth
                                     </div>
                                 </div>
                             </div>
@@ -513,30 +475,19 @@
 
                     <!-- Mobile Profile Section -->
                     <div class="px-6 py-4 border-t bg-gray-50">
-                        <h4 class="text-sm font-medium text-gray-700 mb-3">
-                            Akun
-                        </h4>
+                        <h4 class="text-sm font-medium text-gray-700 mb-3">Akun</h4>
                         <div class="space-y-1">
-                            <!-- Login/Sign up Mobile -->
-                            <a
-                                href="#"
-                                class="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-white text-gray-700 hover:text-primary transition"
-                            >
-                                <!-- Icon Login - Masukan icon login disini -->
+                            <!-- Login/Sign up Mobile - Hanya tampil jika belum login -->
+                            @guest
+                            <a href="#" class="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-white text-gray-700 hover:text-primary transition" data-modal="auth">
                                 <div class="w-4 h-4 text-gray-400">
-                                    <svg
-                                        fill="currentColor"
-                                        viewBox="0 0 20 20"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
-                                            clip-rule="evenodd"
-                                        />
+                                    <svg fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                     </svg>
                                 </div>
                                 <span class="text-sm">Log in or sign up</span>
                             </a>
+                            @endguest
 
                             <!-- Settings Mobile -->
                             <a
@@ -592,11 +543,9 @@
                                 </button>
                             </div>
 
-                            <!-- Logout Mobile -->
-                            <a
-                                href="#"
-                                class="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-red-50 text-red-600 hover:text-red-700 transition"
-                            >
+                            <!-- Logout Mobile - Hanya tampil jika sudah login -->
+                            @auth
+                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-red-50 text-red-600 hover:text-red-700 transition">
                                 <!-- Icon Logout - Masukan icon logout disini -->
                                 <div class="w-4 h-4">
                                     <svg
@@ -612,137 +561,324 @@
                                 </div>
                                 <span class="text-sm">Logout</span>
                             </a>
+                            @endauth
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
 
-        @push('scripts')
-        <script>
-            // Profile dropdown functionality
-            const profileTrigger = document.getElementById("profile-trigger");
-            const dropdownMenu = document.getElementById("dropdown-menu");
-            const profileDropdown = document.getElementById("profile-dropdown");
+            <!-- Auth Modal -->
+<div id="auth-modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-800">Sign in or sign up</h2>
+                <button id="close-auth-modal" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
 
-            let isHovering = false;
+            <!-- Content -->
+            <div class="space-y-6">
+                <!-- Google Login Button -->
+<!-- Di dalam auth modal, update tombol Google -->
+<button onclick="loginWithGoogle()" class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 hover:bg-gray-50 transition">
+    <img src="{{ asset('img/google-icon.svg') }}" alt="Google" class="w-5 h-5">
+    <span>Continue with Google</span>
+</button>
 
-            function showDropdown() {
-                dropdownMenu.classList.remove(
-                    "opacity-0",
-                    "invisible",
-                    "scale-95"
-                );
-                dropdownMenu.classList.add(
-                    "opacity-100",
-                    "visible",
-                    "scale-100"
-                );
+                <!-- Divider -->
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-200"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">or</span>
+                    </div>
+                </div>
+
+                <!-- Email Form -->
+                <form id="email-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+                        <input type="email" id="email-input" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary text-white rounded-lg px-4 py-3 font-medium hover:bg-primary-dark transition">
+                        Continue with email
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OTP Modal -->
+<div id="otp-modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Enter verification code</h2>
+            <p class="text-gray-600 mb-6">We've sent a code to your email</p>
+            
+            <form id="otp-form" class="space-y-6">
+                <div class="flex gap-2 justify-between">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl focus:ring-2 focus:ring-primary focus:border-transparent" />
+                </div>
+                
+                <button type="submit" class="w-full bg-primary text-white rounded-lg px-4 py-3 font-medium">
+                    Verify
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+<script>
+    // Profile dropdown functionality
+    const profileTrigger = document.getElementById("profile-trigger");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    const profileDropdown = document.getElementById("profile-dropdown");
+
+    let isHovering = false;
+
+    function showDropdown() {
+        dropdownMenu.classList.remove(
+            "opacity-0",
+            "invisible",
+            "scale-95"
+        );
+        dropdownMenu.classList.add(
+            "opacity-100",
+            "visible",
+            "scale-100"
+        );
+    }
+
+    function hideDropdown() {
+        dropdownMenu.classList.remove(
+            "opacity-100",
+            "visible",
+            "scale-100"
+        );
+        dropdownMenu.classList.add(
+            "opacity-0",
+            "invisible",
+            "scale-95"
+        );
+    }
+
+    profileDropdown.addEventListener("mouseenter", () => {
+        isHovering = true;
+        setTimeout(() => {
+            if (isHovering) {
+                showDropdown();
             }
+        }, 100);
+    });
 
-            function hideDropdown() {
-                dropdownMenu.classList.remove(
-                    "opacity-100",
-                    "visible",
-                    "scale-100"
-                );
-                dropdownMenu.classList.add(
-                    "opacity-0",
-                    "invisible",
-                    "scale-95"
-                );
+    profileDropdown.addEventListener("mouseleave", () => {
+        isHovering = false;
+        setTimeout(() => {
+            if (!isHovering) {
+                hideDropdown();
             }
+        }, 100);
+    });
 
-            profileDropdown.addEventListener("mouseenter", () => {
-                isHovering = true;
-                setTimeout(() => {
-                    if (isHovering) {
-                        showDropdown();
-                    }
-                }, 100);
-            });
+    // Mobile sidebar functionality
+    const mobileMenuButton =
+        document.getElementById("mobile-menu-button");
+    const mobileSidebar = document.getElementById("mobile-sidebar");
+    const sidebarOverlay = document.getElementById("sidebar-overlay");
+    const sidebarPanel = document.getElementById("sidebar-panel");
+    const sidebarClose = document.getElementById("sidebar-close");
 
-            profileDropdown.addEventListener("mouseleave", () => {
-                isHovering = false;
-                setTimeout(() => {
-                    if (!isHovering) {
-                        hideDropdown();
-                    }
-                }, 100);
-            });
+    function openSidebar() {
+        mobileSidebar.classList.remove("pointer-events-none");
+        sidebarOverlay.classList.remove("opacity-0");
+        sidebarPanel.classList.remove("translate-x-full");
+        document.body.classList.add("overflow-hidden");
+    }
 
-            // Mobile sidebar functionality
-            const mobileMenuButton =
-                document.getElementById("mobile-menu-button");
-            const mobileSidebar = document.getElementById("mobile-sidebar");
-            const sidebarOverlay = document.getElementById("sidebar-overlay");
-            const sidebarPanel = document.getElementById("sidebar-panel");
-            const sidebarClose = document.getElementById("sidebar-close");
+    function closeSidebar() {
+        sidebarOverlay.classList.add("opacity-0");
+        sidebarPanel.classList.add("translate-x-full");
+        setTimeout(() => {
+            mobileSidebar.classList.add("pointer-events-none");
+            document.body.classList.remove("overflow-hidden");
+        }, 300);
+    }
 
-            function openSidebar() {
-                mobileSidebar.classList.remove("pointer-events-none");
-                sidebarOverlay.classList.remove("opacity-0");
-                sidebarPanel.classList.remove("translate-x-full");
-                document.body.classList.add("overflow-hidden");
+    mobileMenuButton.addEventListener("click", openSidebar);
+    sidebarClose.addEventListener("click", closeSidebar);
+    sidebarOverlay.addEventListener("click", closeSidebar);
+
+    // Auth Modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Auth Modal Toggle
+        const loginButton = document.querySelector('[data-modal="auth"]');
+        const authModal = document.getElementById('auth-modal');
+        const closeAuthModal = document.getElementById('close-auth-modal');
+        const otpModal = document.getElementById('otp-modal');
+
+        // Show auth modal
+        loginButton.addEventListener('click', () => {
+            authModal.classList.remove('hidden');
+        });
+
+        // Close auth modal
+        closeAuthModal.addEventListener('click', () => {
+            authModal.classList.add('hidden');
+        });
+
+        // Handle email form submission
+        const emailForm = document.getElementById('email-form');
+        emailForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+
+            try {
+                const response = await fetch('/auth/email/send-otp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    },
+                    body: JSON.stringify({ email })
+                });
+
+                if (response.ok) {
+                    authModal.classList.add('hidden');
+                    otpModal.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error('Error:', error);
             }
+        });
 
-            function closeSidebar() {
-                sidebarOverlay.classList.add("opacity-0");
-                sidebarPanel.classList.add("translate-x-full");
-                setTimeout(() => {
-                    mobileSidebar.classList.add("pointer-events-none");
-                    document.body.classList.remove("overflow-hidden");
-                }, 300);
-            }
+        // Handle OTP form submission
+        const otpForm = document.getElementById('otp-form');
+        const otpInputs = otpForm.querySelectorAll('input');
 
-            mobileMenuButton.addEventListener("click", openSidebar);
-            sidebarClose.addEventListener("click", closeSidebar);
-            sidebarOverlay.addEventListener("click", closeSidebar);
-
-            // Theme toggle functionality (mobile)
-            const themeToggle = document.getElementById("theme-toggle");
-            const toggleSpan = themeToggle.querySelector("span");
-
-            let isDark = false;
-
-            themeToggle.addEventListener("click", () => {
-                isDark = !isDark;
-                if (isDark) {
-                    themeToggle.classList.add("bg-primary");
-                    themeToggle.classList.remove("bg-gray-200");
-                    toggleSpan.classList.add("translate-x-6");
-                    toggleSpan.classList.remove("translate-x-1");
-                } else {
-                    themeToggle.classList.remove("bg-primary");
-                    themeToggle.classList.add("bg-gray-200");
-                    toggleSpan.classList.remove("translate-x-6");
-                    toggleSpan.classList.add("translate-x-1");
+        // Auto-focus next input
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
                 }
             });
 
-            // Close dropdown when clicking outside
-            document.addEventListener("click", (event) => {
-                if (!profileDropdown.contains(event.target)) {
-                    hideDropdown();
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    otpInputs[index - 1].focus();
                 }
             });
+        });
 
-            // Handle window resize
-            window.addEventListener("resize", () => {
-                if (window.innerWidth >= 768) {
-                    closeSidebar();
+        otpForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const otp = Array.from(otpInputs).map(input => input.value).join('');
+            const email = document.getElementById('email-input').value;
+
+            try {
+                const response = await fetch('/auth/email/verify-otp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    },
+                    body: JSON.stringify({ 
+                        email,
+                        otp 
+                    })
+                });
+
+                if (response.ok) {
+                    window.location.reload();
                 }
-            });
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    });
 
-            // Prevent body scroll when sidebar is open
-            document.addEventListener(
-                "touchmove",
-                (e) => {
-                    if (document.body.classList.contains("overflow-hidden")) {
-                        e.preventDefault();
-                    }
-                },
-                { passive: false }
-            );
-        </script>
-        @endpush
+    // Theme toggle functionality (mobile)
+    const themeToggle = document.getElementById("theme-toggle");
+    const toggleSpan = themeToggle.querySelector("span");
+
+    let isDark = false;
+
+    themeToggle.addEventListener("click", () => {
+        isDark = !isDark;
+        if (isDark) {
+            themeToggle.classList.add("bg-primary");
+            themeToggle.classList.remove("bg-gray-200");
+            toggleSpan.classList.add("translate-x-6");
+            toggleSpan.classList.remove("translate-x-1");
+        } else {
+            themeToggle.classList.remove("bg-primary");
+            themeToggle.classList.add("bg-gray-200");
+            toggleSpan.classList.remove("translate-x-6");
+            toggleSpan.classList.add("translate-x-1");
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (event) => {
+        if (!profileDropdown.contains(event.target)) {
+            hideDropdown();
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+            closeSidebar();
+        }
+    });
+
+    // Prevent body scroll when sidebar is open
+    document.addEventListener(
+        "touchmove",
+        (e) => {
+            if (document.body.classList.contains("overflow-hidden")) {
+                e.preventDefault();
+            }
+        },
+        { passive: false }
+    );
+
+    // Update fungsi loginWithGoogle
+    window.loginWithGoogle = function() {
+        window.location.href = "{{ route('auth.google') }}";
+    };
+
+    // Update tombol Google di modal
+    document.querySelector('[onclick="loginWithGoogle()"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = "{{ route('auth.google') }}";
+    });
+
+    // Logout handling
+    document.getElementById('logout-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (confirm('Apakah Anda yakin ingin logout?')) {
+        this.submit();
+    }
+});
+</script>
+@endpush

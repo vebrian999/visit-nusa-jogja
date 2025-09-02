@@ -1,9 +1,9 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +58,12 @@ Route::get('/checkout-contact', function () {
 Route::get('/checkout-payments', function () {
     return view('pages.checkout-payments');
 })->name('checkout.payments');
+
+// Auth Routes
+Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/auth-google-callback', [AuthController::class, 'handleGoogleCallback']);
+
+// Email OTP Routes
+Route::post('/auth/email/send-otp', [AuthController::class, 'sendOTP']);
+Route::post('/auth/email/verify-otp', [AuthController::class, 'verifyOTP']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
