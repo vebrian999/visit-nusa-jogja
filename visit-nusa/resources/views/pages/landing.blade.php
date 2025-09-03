@@ -95,206 +95,13 @@
         <section id="paket-wisata" class="container mx-auto py-16 main-container">
           <h1 class="text-4xl font-semibold mb-8">Pilihan Paket Wisata <span class="underline text-primary">Harian Terlaris</span> Traveler Tahun Ini</h1>
           <div class="relative">
+
+
             <!-- Card Slider -->
             <div id="card-slider" class="flex gap-6 overflow-x-auto scroll-smooth px-1 py-2">
-              <!-- Card 1 -->
-              <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
-                <div class="relative">
-                  <img src="{{ asset('img/img-card.png') }}" alt="Bali" class="w-full h-[212px] object-cover" />
-                  <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
-                      <path
-                        d="M19 5.25C19 2.76472 16.9013 0.75 14.3125 0.75C12.3769 0.75 10.7153 1.87628 10 3.48342C9.28472 1.87628 7.62312 0.75 5.6875 0.75C3.09867 0.75 1 2.76472 1 5.25C1 12.4706 10 17.25 10 17.25C10 17.25 19 12.4706 19 5.25Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">DAY TRIP</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h2>
-                  <div class="flex items-center text-sm text-gray-600 mb-4 space-x-2">
-                    <span>7 hours</span>
-                    <span>•</span>
-                    <span>Private tour</span>
-                    <span>•</span>
-                    <span>Small group</span>
-                  </div>
-                  <div class="flex items-center mb-4">
-                    <div class="flex items-center space-x-1">
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 ml-2">4.7</span>
-                    <span class="text-sm text-gray-500 ml-1">(320)</span>
-                  </div>
-                  <div class="border-t pt-4">
-                    <div class="text-sm text-gray-500 mb-1">From Rp 500.000</div>
-                    <div class="flex items-end justify-between">
-                      <div class="flex items-baseline">
-                        <span class="text-xl font-bold text-gray-900">Rp 250,000</span>
-                        <span class="text-sm text-gray-500 ml-2">Per person</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
-                <div class="relative">
-                  <img src="{{ asset('img/img-card.png') }}" alt="Bali" class="w-full h-[212px] object-cover" />
-                  <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
-                      <path
-                        d="M19 5.25C19 2.76472 16.9013 0.75 14.3125 0.75C12.3769 0.75 10.7153 1.87628 10 3.48342C9.28472 1.87628 7.62312 0.75 5.6875 0.75C3.09867 0.75 1 2.76472 1 5.25C1 12.4706 10 17.25 10 17.25C10 17.25 19 12.4706 19 5.25Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">DAY TRIP</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h2>
-                  <div class="flex items-center text-sm text-gray-600 mb-4 space-x-2">
-                    <span>7 hours</span>
-                    <span>•</span>
-                    <span>Private tour</span>
-                    <span>•</span>
-                    <span>Small group</span>
-                  </div>
-                  <div class="flex items-center mb-4">
-                    <div class="flex items-center space-x-1">
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 ml-2">4.7</span>
-                    <span class="text-sm text-gray-500 ml-1">(320)</span>
-                  </div>
-                  <div class="border-t pt-4">
-                    <div class="text-sm text-gray-500 mb-1">From Rp 500.000</div>
-                    <div class="flex items-end justify-between">
-                      <div class="flex items-baseline">
-                        <span class="text-xl font-bold text-gray-900">Rp 250,000</span>
-                        <span class="text-sm text-gray-500 ml-2">Per person</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
-                <div class="relative">
-                  <img src="{{ asset('img/img-card.png') }}" alt="Jakarta" class="w-full h-[212px] object-cover" />
-                  <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
-                      <path
-                        d="M19 5.25C19 2.76472 16.9013 0.75 14.3125 0.75C12.3769 0.75 10.7153 1.87628 10 3.48342C9.28472 1.87628 7.62312 0.75 5.6875 0.75C3.09867 0.75 1 2.76472 1 5.25C1 12.4706 10 17.25 10 17.25C10 17.25 19 12.4706 19 5.25Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">DAY TRIP</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h2>
-                  <div class="flex items-center text-sm text-gray-600 mb-4 space-x-2">
-                    <span>8 hours</span>
-                    <span>•</span>
-                    <span>Skip the line</span>
-                    <span>•</span>
-                    <span>Small group</span>
-                  </div>
-                  <div class="flex items-center mb-4">
-                    <div class="flex items-center space-x-1">
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 ml-2">4.7</span>
-                    <span class="text-sm text-gray-500 ml-1">(320)</span>
-                  </div>
-                  <div class="border-t pt-4">
-                    <div class="text-sm text-gray-500 mb-1">From Rp 500.000</div>
-                    <div class="flex items-end justify-between">
-                      <div class="flex items-baseline">
-                        <span class="text-xl font-bold text-gray-900">Rp 250,000</span>
-                        <span class="text-sm text-gray-500 ml-2">Per person</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
-                <div class="relative">
-                  <img src="{{ asset('img/img-card.png') }}" alt="Jakarta" class="w-full h-[212px] object-cover" />
-                  <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
-                      <path
-                        d="M19 5.25C19 2.76472 16.9013 0.75 14.3125 0.75C12.3769 0.75 10.7153 1.87628 10 3.48342C9.28472 1.87628 7.62312 0.75 5.6875 0.75C3.09867 0.75 1 2.76472 1 5.25C1 12.4706 10 17.25 10 17.25C10 17.25 19 12.4706 19 5.25Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">DAY TRIP</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h2>
-                  <div class="flex items-center text-sm text-gray-600 mb-4 space-x-2">
-                    <span>8 hours</span>
-                    <span>•</span>
-                    <span>Skip the line</span>
-                    <span>•</span>
-                    <span>Small group</span>
-                  </div>
-                  <div class="flex items-center mb-4">
-                    <div class="flex items-center space-x-1">
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 ml-2">4.7</span>
-                    <span class="text-sm text-gray-500 ml-1">(320)</span>
-                  </div>
-                  <div class="border-t pt-4">
-                    <div class="text-sm text-gray-500 mb-1">From Rp 500.000</div>
-                    <div class="flex items-end justify-between">
-                      <div class="flex items-baseline">
-                        <span class="text-xl font-bold text-gray-900">Rp 250,000</span>
-                        <span class="text-sm text-gray-500 ml-2">Per person</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                @foreach($paketHarian as $paket)
+                    <x-wisata-card :paket="$paket" />
+                @endforeach
             </div>
           </div>
         </section>
@@ -305,205 +112,12 @@
           <h1 class="text-4xl font-semibold mb-8">Pilihan Paket Wisata <span class="underline text-primary">Beberapa Hari Terlaris</span> Tahun Ini</h1>
           <div class="relative">
             <!-- Card Slider -->
-            <div id="card-slider" class="flex gap-6 overflow-x-auto scroll-smooth px-1 py-2">
-              <!-- Card 1 -->
-              <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
-                <div class="relative">
-                  <img src="{{ asset('img/img-card.png') }}" alt="Bali" class="w-full h-[212px] object-cover" />
-                  <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
-                      <path
-                        d="M19 5.25C19 2.76472 16.9013 0.75 14.3125 0.75C12.3769 0.75 10.7153 1.87628 10 3.48342C9.28472 1.87628 7.62312 0.75 5.6875 0.75C3.09867 0.75 1 2.76472 1 5.25C1 12.4706 10 17.25 10 17.25C10 17.25 19 12.4706 19 5.25Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">DAY TRIP</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h2>
-                  <div class="flex items-center text-sm text-gray-600 mb-4 space-x-2">
-                    <span>7 hours</span>
-                    <span>•</span>
-                    <span>Private tour</span>
-                    <span>•</span>
-                    <span>Small group</span>
-                  </div>
-                  <div class="flex items-center mb-4">
-                    <div class="flex items-center space-x-1">
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 ml-2">4.7</span>
-                    <span class="text-sm text-gray-500 ml-1">(320)</span>
-                  </div>
-                  <div class="border-t pt-4">
-                    <div class="text-sm text-gray-500 mb-1">From Rp 500.000</div>
-                    <div class="flex items-end justify-between">
-                      <div class="flex items-baseline">
-                        <span class="text-xl font-bold text-gray-900">Rp 250,000</span>
-                        <span class="text-sm text-gray-500 ml-2">Per person</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div id="card-slider-multi" class="flex gap-6 overflow-x-auto scroll-smooth px-1 py-2">
+                @foreach($paketBeberapaHari as $paket)
+                    <x-wisata-card :paket="$paket" />
+                @endforeach
 
-              <!-- Card 2 -->
-              <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
-                <div class="relative">
-                  <img src="{{ asset('img/img-card.png') }}" alt="Bali" class="w-full h-[212px] object-cover" />
-                  <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
-                      <path
-                        d="M19 5.25C19 2.76472 16.9013 0.75 14.3125 0.75C12.3769 0.75 10.7153 1.87628 10 3.48342C9.28472 1.87628 7.62312 0.75 5.6875 0.75C3.09867 0.75 1 2.76472 1 5.25C1 12.4706 10 17.25 10 17.25C10 17.25 19 12.4706 19 5.25Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">DAY TRIP</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h2>
-                  <div class="flex items-center text-sm text-gray-600 mb-4 space-x-2">
-                    <span>7 hours</span>
-                    <span>•</span>
-                    <span>Private tour</span>
-                    <span>•</span>
-                    <span>Small group</span>
-                  </div>
-                  <div class="flex items-center mb-4">
-                    <div class="flex items-center space-x-1">
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 ml-2">4.7</span>
-                    <span class="text-sm text-gray-500 ml-1">(320)</span>
-                  </div>
-                  <div class="border-t pt-4">
-                    <div class="text-sm text-gray-500 mb-1">From Rp 500.000</div>
-                    <div class="flex items-end justify-between">
-                      <div class="flex items-baseline">
-                        <span class="text-xl font-bold text-gray-900">Rp 250,000</span>
-                        <span class="text-sm text-gray-500 ml-2">Per person</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <!-- Card 3 -->
-              <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
-                <div class="relative">
-                  <img src="{{ asset('img/img-card.png') }}" alt="Jakarta" class="w-full h-[212px] object-cover" />
-                  <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
-                      <path
-                        d="M19 5.25C19 2.76472 16.9013 0.75 14.3125 0.75C12.3769 0.75 10.7153 1.87628 10 3.48342C9.28472 1.87628 7.62312 0.75 5.6875 0.75C3.09867 0.75 1 2.76472 1 5.25C1 12.4706 10 17.25 10 17.25C10 17.25 19 12.4706 19 5.25Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">DAY TRIP</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h2>
-                  <div class="flex items-center text-sm text-gray-600 mb-4 space-x-2">
-                    <span>8 hours</span>
-                    <span>•</span>
-                    <span>Skip the line</span>
-                    <span>•</span>
-                    <span>Small group</span>
-                  </div>
-                  <div class="flex items-center mb-4">
-                    <div class="flex items-center space-x-1">
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 ml-2">4.7</span>
-                    <span class="text-sm text-gray-500 ml-1">(320)</span>
-                  </div>
-                  <div class="border-t pt-4">
-                    <div class="text-sm text-gray-500 mb-1">From Rp 500.000</div>
-                    <div class="flex items-end justify-between">
-                      <div class="flex items-baseline">
-                        <span class="text-xl font-bold text-gray-900">Rp 250,000</span>
-                        <span class="text-sm text-gray-500 ml-2">Per person</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bg-white rounded-xl overflow-hidden max-w-sm w-[320px] flex-shrink-0 border">
-                <div class="relative">
-                  <img src="{{ asset('img/img-card.png') }}" alt="Jakarta" class="w-full h-[212px] object-cover" />
-                  <div class="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 20 18" fill="none">
-                      <path
-                        d="M19 5.25C19 2.76472 16.9013 0.75 14.3125 0.75C12.3769 0.75 10.7153 1.87628 10 3.48342C9.28472 1.87628 7.62312 0.75 5.6875 0.75C3.09867 0.75 1 2.76472 1 5.25C1 12.4706 10 17.25 10 17.25C10 17.25 19 12.4706 19 5.25Z"
-                        stroke="white"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">DAY TRIP</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h2>
-                  <div class="flex items-center text-sm text-gray-600 mb-4 space-x-2">
-                    <span>8 hours</span>
-                    <span>•</span>
-                    <span>Skip the line</span>
-                    <span>•</span>
-                    <span>Small group</span>
-                  </div>
-                  <div class="flex items-center mb-4">
-                    <div class="flex items-center space-x-1">
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                      <svg class="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
-                    </div>
-                    <span class="text-sm font-semibold text-gray-900 ml-2">4.7</span>
-                    <span class="text-sm text-gray-500 ml-1">(320)</span>
-                  </div>
-                  <div class="border-t pt-4">
-                    <div class="text-sm text-gray-500 mb-1">From Rp 500.000</div>
-                    <div class="flex items-end justify-between">
-                      <div class="flex items-baseline">
-                        <span class="text-xl font-bold text-gray-900">Rp 250,000</span>
-                        <span class="text-sm text-gray-500 ml-2">Per person</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -512,8 +126,10 @@
         <section class="py-12 mx-auto main-container container">
           <div class="relative overflow-hidden bg-white rounded-2xl" style="height: 568px">
             <!-- Background Image -->
-            <img src="{{ asset('img/banner-index.png') }}" alt="" class="absolute inset-0 h-full w-full object-cover object-center rounded-2xl z-0" />
-
+            <img src="{{ asset('img/banner-index.png') }}" alt="Banner" class="absolute inset-0 w-full h-full object-cover" />
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+            
             <!-- Banner Content -->
             <div class="relative z-30 flex flex-col items-center justify-center h-full px-6 text-center">
               <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Booking Mudah, Bayar Setengah Dulu!</h2>
@@ -527,6 +143,8 @@
           </div>
         </section>
 
+      
+      
         <!-- section kategori -->
         <section class="container mx-auto py-16 main-container">
           <!-- Kategori Label -->

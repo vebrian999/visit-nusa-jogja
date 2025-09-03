@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Visit Nusa - Tour Packages</title>
+  </head>
+  <body class="">
+    <!-- Header -->
+    <header class="bg-secondary shadow-sm fixed w-full top-0 z-50">
+      <nav class="main-container mx-auto px-2 container md:px-16">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo Section -->
+          <div class="flex-shrink-0">
+            <a href="./index.html" class="text-3xl font text-primary">VISIT NUSA</a>
+          </div>
+
+          <!-- Desktop Navigation & Icons - Hidden on mobile -->
+          <div class="hidden md:flex flex-grow justify-center font-normal">
+            <ul class="flex space-x-8">
+              <li><a href="./listing-loker.html" class="nav-underline font- transition-colors text-white hover:text-primary">Beranda</a></li>
+              <li><a href="#" class="nav-underline transition-colors text-white hover:text-primary">Paket Wisata</a></li>
+              <li><a href="./lamaran-saya.html" class="nav-underline transition-colors text-white hover:text-primary">Layanan</a></li>
+              <li><a href="./listing-perusahaan.html" class="nav-underline transition-colors text-white hover:text-primary">Inspirasi Perjalanan</a></li>
+              <li><a href="./listing-artikel.html" class="nav-underline transition-colors text-white hover:text-primary">Panduan</a></li>
+            </ul>
+          </div>
+
+          <!-- Desktop Icons - Hidden on mobile -->
+          <div class="hidden md:flex items-center space-x-10">
+            <!-- Cart -->
+            <div class="flex flex-col items-center cursor-pointer hover:text-primary transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21" fill="none">
+                <path
+                  d="M1.25 1.5H2.63568C3.14537 1.5 3.59138 1.84265 3.7227 2.33513L4.1059 3.77209M6.5 12.75C4.84315 12.75 3.5 14.0931 3.5 15.75H19.25M6.5 12.75H17.7183C18.8394 10.4494 19.8177 8.06635 20.6417 5.6125C15.88 4.39646 10.8905 3.75 5.75 3.75C5.20021 3.75 4.65214 3.7574 4.1059 3.77209M6.5 12.75L4.1059 3.77209M5 18.75C5 19.1642 4.66421 19.5 4.25 19.5C3.83579 19.5 3.5 19.1642 3.5 18.75C3.5 18.3358 3.83579 18 4.25 18C4.66421 18 5 18.3358 5 18.75ZM17.75 18.75C17.75 19.1642 17.4142 19.5 17 19.5C16.5858 19.5 16.25 19.1642 16.25 18.75C16.25 18.3358 16.5858 18 17 18C17.4142 18 17.75 18.3358 17.75 18.75Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span class="text-white mt-1.5 text-sm font-normal">Cart</span>
+            </div>
+            <!-- Favorit -->
+            <div class="flex flex-col items-center cursor-pointer hover:text-primary transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                <path
+                  d="M19 5.75C19 3.26472 16.9013 1.25 14.3125 1.25C12.3769 1.25 10.7153 2.37628 10 3.98342C9.28472 2.37628 7.62312 1.25 5.6875 1.25C3.09867 1.25 1 3.26472 1 5.75C1 12.9706 10 17.75 10 17.75C10 17.75 19 12.9706 19 5.75Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span class="text-white mt-1.5 text-sm font-normal">Favorit</span>
+            </div>
+            <!-- ID/IDR Rp -->
+            <div class="flex flex-col items-center cursor-pointer hover:text-primary transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M10 19C14.1926 19 17.7156 16.1332 18.7157 12.2529M10 19C5.80742 19 2.28442 16.1332 1.2843 12.2529M10 19C12.4853 19 14.5 14.9706 14.5 10C14.5 5.02944 12.4853 1 10 1M10 19C7.51472 19 5.5 14.9706 5.5 10C5.5 5.02944 7.51472 1 10 1M10 1C13.3652 1 16.299 2.84694 17.8431 5.58245M10 1C6.63481 1 3.70099 2.84694 2.15692 5.58245M17.8431 5.58245C15.7397 7.40039 12.9983 8.5 10 8.5C7.00172 8.5 4.26027 7.40039 2.15692 5.58245M17.8431 5.58245C18.5797 6.88743 19 8.39463 19 10C19 10.778 18.9013 11.5329 18.7157 12.2529M18.7157 12.2529C16.1334 13.6847 13.1619 14.5 10 14.5C6.8381 14.5 3.86662 13.6847 1.2843 12.2529M1.2843 12.2529C1.09871 11.5329 1 10.778 1 10C1 8.39463 1.42032 6.88743 2.15692 5.58245"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span class="text-white mt-1.5 text-sm font-normal">ID/IDR Rp</span>
+            </div>
+            <!-- Login -->
+            <div class="flex flex-col items-center cursor-pointer hover:text-primary transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 22 19" fill="none">
+                <path
+                  d="M16.058 12.771C16.5258 12.4515 17.0745 12.2711 17.6406 12.2504C18.2067 12.2298 18.767 12.3699 19.2568 12.6544C19.7466 12.939 20.1459 13.3564 20.4083 13.8584C20.6708 14.3604 20.7858 14.9264 20.74 15.491C19.5402 15.9103 18.2658 16.0735 16.999 15.97C16.9951 14.8366 16.6687 13.7268 16.058 12.772C15.5159 11.9218 14.7681 11.222 13.8838 10.7375C12.9996 10.253 12.0073 9.99932 10.999 10C9.99085 9.99948 8.99884 10.2532 8.11474 10.7377C7.23064 11.2223 6.48301 11.9219 5.94101 12.772C5.40235 13.7269 5.0026 14.8357 4.99901 15.969M4.99901 15.969C3.73264 16.0763 2.45892 15.9137 1.26001 15.492C1.21436 14.9276 1.3294 14.3617 1.59184 13.8599C1.85427 13.3581 2.25338 12.9408 2.74301 12.6563C3.23264 12.3718 3.7928 12.2317 4.35873 12.2521C4.92465 12.2726 5.47322 12.4528 5.94101 12.772M4.99901 15.969C5.0026 14.8357 5.33063 13.7269 5.94101 12.772M13.999 4C13.999 4.79565 13.6829 5.55871 13.1203 6.12132C12.5577 6.68393 11.7947 7 10.999 7C10.2034 7 9.4403 6.68393 8.87769 6.12132C8.31508 5.55871 7.99901 4.79565 7.99901 4C7.99901 3.20435 8.31508 2.44129 8.87769 1.87868C9.4403 1.31607 10.2034 1 10.999 1C11.7947 1 12.5577 1.31607 13.1203 1.87868C13.6829 2.44129 13.999 3.20435 13.999 4ZM19.999 7C19.999 7.29547 19.9408 7.58806 19.8277 7.86104C19.7147 8.13402 19.5489 8.38206 19.34 8.59099C19.1311 8.79992 18.883 8.96566 18.61 9.07873C18.3371 9.1918 18.0445 9.25 17.749 9.25C17.4535 9.25 17.161 9.1918 16.888 9.07873C16.615 8.96566 16.3669 8.79992 16.158 8.59099C15.9491 8.38206 15.7834 8.13402 15.6703 7.86104C15.5572 7.58806 15.499 7.29547 15.499 7C15.499 6.40326 15.7361 5.83097 16.158 5.40901C16.58 4.98705 17.1523 4.75 17.749 4.75C18.3457 4.75 18.918 4.98705 19.34 5.40901C19.762 5.83097 19.999 6.40326 19.999 7ZM6.49901 7C6.49901 7.29547 6.44081 7.58806 6.32774 7.86104C6.21466 8.13402 6.04893 8.38206 5.84 8.59099C5.63107 8.79992 5.38303 8.96566 5.11005 9.07873C4.83706 9.1918 4.54448 9.25 4.24901 9.25C3.95353 9.25 3.66095 9.1918 3.38797 9.07873C3.11499 8.96566 2.86695 8.79992 2.65802 8.59099C2.44909 8.38206 2.28335 8.13402 2.17028 7.86104C2.05721 7.58806 1.99901 7.29547 1.99901 7C1.99901 6.40326 2.23606 5.83097 2.65802 5.40901C3.07998 4.98705 3.65227 4.75 4.24901 4.75C4.84575 4.75 5.41804 4.98705 5.84 5.40901C6.26196 5.83097 6.49901 6.40326 6.49901 7Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span class="text-white mt-1.5 text-sm font-normal">Login</span>
+            </div>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden p-2 transition-colors" id="mobile-menu-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <!-- Off-canvas Sidebar Mobile -->
+      <div id="mobile-sidebar" class="fixed inset-0 z-50 flex md:hidden pointer-events-none">
+        <!-- Overlay -->
+        <div id="sidebar-overlay" class="bg-black bg-opacity-40 w-full h-full transition-opacity duration-300 opacity-0"></div>
+        <!-- Sidebar -->
+        <div class="fixed right-0 top-0 z-50 w-full h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 flex flex-col" id="sidebar-panel">
+          <!-- Header -->
+          <div class="flex items-center justify-between px-6 py-5 border-b">
+            <div class="flex items-center gap-3">
+              <img src="./src/img/img-card.png" alt="Logo WorkinGo" class="h-10 w-10" />
+              <a href="./index.html" class="text-2xl font-bold text-gray-800">WorkinGo</a>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="flex-1 px-6 py-6 space-y-3 text-base font-light">
+            <a href="./listing-loker.html" class="block py-2 px-2 rounded hover:bg-gray-100 text-white hover:text-primary transition">Beranda</a>
+            <a href="#" class="block py-2 px-2 rounded hover:bg-gray-100 text-white hover:text-primary transition">Paket Wisata</a>
+            <a href="./lamaran-saya.html" class="block py-2 px-2 rounded hover:bg-gray-100 text-white hover:text-primary transition">Lamaran Saya</a>
+            <a href="./listing-perusahaan.html" class="block py-2 px-2 rounded hover:bg-gray-100 text-white hover:text-primary transition">Perusahaan</a>
+            <a href="./listing-artikel.html" class="block py-2 px-2 rounded hover:bg-gray-100 text-white hover:text-primary transition">Panduan</a>
+          </nav>
+
+          <!-- Auth Buttons -->
+          <div class="px-6 py-6 border-t flex flex-col gap-3">
+            <a href="./login.html" class="w-full px-4 py-2 rounded-md border border-primary text-primary hover:bg-primary hover:text-white transition-colors font-normal text-center">Masuk</a>
+            <a href="./daftar-choose-role.html" class="w-full px-4 py-2 rounded-md bg-primary text-white hover:opacity-90 transition font-normal text-center">Daftar</a>
+          </div>
+
+          <!-- Close Button -->
+          <button id="sidebar-close" class="mt-auto mb-8 p-2 bg-secondary text-primary rounded-full mx-auto shadow hover:scale-105 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main class="pt-20 pb-16">
+      <section class="main-container mx-auto mt-10 container">
+        <!-- Search Bar & Filters -->
+        <div class="mb-7">
+          <!-- Top Bar with Search and Location -->
+          <div class="bg-white rounded-xl border shadow-sm p-2 mb-6">
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-0">
+              <div class="flex w-full md:w-auto flex-1 items-center bg-white rounded-lg px-4 py-2">
+                <!-- Search Icon -->
+                <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path
+                    d="M9.32178 2.28564C11.3347 2.28575 13.227 3.06916 14.6489 4.49365C16.0718 5.91916 16.8569 7.80687 16.8569 9.82178C16.8568 11.5062 16.3094 13.1044 15.2983 14.4116L15.0288 14.7603L22.0972 21.8286L21.3267 22.5981L14.5688 15.8423L14.2573 15.5317L13.9097 15.8003C12.6021 16.8092 11.0062 17.3568 9.32178 17.3569C7.30612 17.3569 5.41579 16.5736 3.99365 15.1489C2.57132 13.7266 1.78575 11.8343 1.78564 9.82178C1.78564 7.9321 2.47398 6.1529 3.73389 4.76611L3.99365 4.49365C5.41613 3.07118 7.30909 2.28564 9.32178 2.28564ZM9.32178 3.32178C7.58717 3.32178 5.95422 3.99794 4.7251 5.22412V5.2251C3.49823 6.45197 2.82178 8.08747 2.82178 9.82178C2.82189 11.5562 3.49808 13.1885 4.72412 14.4175L4.7251 14.4185C5.95422 15.6447 7.58713 16.3218 9.32178 16.3218C11.0562 16.3217 12.6885 15.6445 13.9175 14.4185V14.4175C15.1442 13.1907 15.8217 11.5559 15.8218 9.82178C15.8218 8.08713 15.1447 6.45422 13.9185 5.2251C12.6912 3.99489 11.0554 3.32189 9.32178 3.32178Z"
+                    fill="#6E7175"
+                    stroke="#202020" />
+                </svg>
+                <!-- Search Input -->
+                <input type="text" placeholder="Find destinations, cities, or activities you're looking for." class="w-full bg-transparent outline-none text-base text-gray-700 placeholder-gray-400" />
+              </div>
+              <!-- Divider -->
+              <div class="hidden md:block h-8 w-px bg-gray-200 mx-4"></div>
+              <!-- Location Selector -->
+              <div class="relative flex items-center w-full md:w-auto">
+                <button id="locationDropdownBtn" type="button" class="flex items-center text-gray-700 px-2 py-2 rounded-lg hover:bg-gray-50 transition text-base font-medium w-full md:w-auto">
+                  <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="23" viewBox="0 0 20 23" fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13 9.75076C13 8.13927 11.6569 6.8335 10.0006 6.8335C8.34308 6.8335 7 8.13927 7 9.75076C7 11.3611 8.34308 12.6668 10.0006 12.6668C11.6569 12.6668 13 11.3611 13 9.75076Z"
+                      stroke="#202020"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9.99941 22C8.56124 22 1 16.0481 1 9.82384C1 4.95108 5.02852 1 9.99941 1C14.9703 1 19 4.95108 19 9.82384C19 16.0481 11.4376 22 9.99941 22Z"
+                      stroke="#202020"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  <span id="selectedLocation" class="mr-1">Pilih Lokasi</span>
+                  <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <!-- Dropdown -->
+                <div id="locationDropdown" class="absolute left-0 top-12 z-20 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 hidden">
+                  <button type="button" class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" data-location="Yogyakarta">Yogyakarta</button>
+                  <button type="button" class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" data-location="Bali">Bali</button>
+                  <button type="button" class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" data-location="Jakarta">Jakarta</button>
+                  <button type="button" class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" data-location="Bandung">Bandung</button>
+                </div>
+              </div>
+              <!-- Divider -->
+              <div class="hidden md:block h-8 w-px bg-gray-200 mx-4"></div>
+              <!-- Cari Button -->
+              <div class="w-full md:w-auto flex justify-end">
+                <button class="bg-primary hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg text-base transition-colors w-full md:w-auto">Cari</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Tags Row -->
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">DAY TRIPS</button>
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">DAY TRIPS</button>
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">DAY TRIPS</button>
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">DAY TRIPS</button>
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">DAY TRIPS</button>
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">DAY TRIPS</button>
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">DAY TRIPS</button>
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">DAY TRIPS</button>
+            <button class="px-4 py-2.5 border border-gray-300 rounded-lg text-sm font-semibold text-secondary hover:bg-primary hover:text-black transition-colors">MULTIDAY TRIPS</button>
+
+            <!-- Filters Button with Icon -->
+            <button id="filtersDropdownBtn" class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-secondary flex items-center gap-2 hover:bg-primary hover:text-black transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M10.5 6H20.25M10.5 6C10.5 6.39782 10.342 6.77936 10.0607 7.06066C9.77936 7.34196 9.39782 7.5 9 7.5C8.60218 7.5 8.22064 7.34196 7.93934 7.06066C7.65804 6.77936 7.5 6.39782 7.5 6M10.5 6C10.5 5.60218 10.342 5.22064 10.0607 4.93934C9.77936 4.65804 9.39782 4.5 9 4.5C8.60218 4.5 8.22064 4.65804 7.93934 4.93934C7.65804 5.22064 7.5 5.60218 7.5 6M7.5 6H3.75M10.5 18H20.25M10.5 18C10.5 18.3978 10.342 18.7794 10.0607 19.0607C9.77936 19.342 9.39782 19.5 9 19.5C8.60218 19.5 8.22064 19.342 7.93934 19.0607C7.65804 18.7794 7.5 18.3978 7.5 18M10.5 18C10.5 17.6022 10.342 17.2206 10.0607 16.9393C9.77936 16.658 9.39782 16.5 9 16.5C8.60218 16.5 8.22064 16.658 7.93934 16.9393C7.65804 17.2206 7.5 17.6022 7.5 18M7.5 18H3.75M16.5 12H20.25M16.5 12C16.5 12.3978 16.342 12.7794 16.0607 13.0607C15.7794 13.342 15.3978 13.5 15 13.5C14.6022 13.5 14.2206 13.342 13.9393 13.0607C13.658 12.7794 13.5 12.3978 13.5 12M16.5 12C16.5 11.6022 16.342 11.2206 16.0607 10.9393C15.7794 10.658 15.3978 10.5 15 10.5C14.6022 10.5 14.2206 10.658 13.9393 10.9393C13.658 11.2206 13.5 11.6022 13.5 12M13.5 12H3.75"
+                  stroke="black"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Filters
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Results Info & Sort -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-2">
+          <div class="flex items-center space-x-2 text-[#202020] text-opacity-70 font-semibold text-sm">
+            <span>8.022 kegiatan ditemukan</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+              <path
+                d="M11.1562 11.6562L9.39321 9.89321M9.39321 9.89321C9.6152 9.67122 9.79129 9.40767 9.91143 9.11763C10.0316 8.82758 10.0934 8.51671 10.0934 8.20277C10.0934 7.88883 10.0316 7.57796 9.91143 7.28791C9.79129 6.99787 9.6152 6.73432 9.39321 6.51233C9.17122 6.29034 8.90767 6.11425 8.61763 5.99411C8.32758 5.87397 8.01671 5.81213 7.70277 5.81213C7.38883 5.81213 7.07796 5.87397 6.78791 5.99411C6.49787 6.11425 6.23432 6.29034 6.01233 6.51233C5.56391 6.96076 5.31198 7.56896 5.31198 8.20312C5.31198 8.83729 5.56391 9.44549 6.01233 9.89392C6.46076 10.3423 7.06896 10.5943 7.70312 10.5943C8.33729 10.5943 8.94549 10.3423 9.39392 9.89392L9.39321 9.89321ZM14.875 9C14.875 9.83718 14.7101 10.6662 14.3897 11.4396C14.0694 12.2131 13.5998 12.9158 13.0078 13.5078C12.4158 14.0998 11.7131 14.5694 10.9396 14.8897C10.1662 15.2101 9.33718 15.375 8.5 15.375C7.66282 15.375 6.83384 15.2101 6.06039 14.8897C5.28694 14.5694 4.58417 14.0998 3.99219 13.5078C3.40022 12.9158 2.93064 12.2131 2.61027 11.4396C2.28989 10.6662 2.125 9.83718 2.125 9C2.125 7.30924 2.79665 5.68774 3.99219 4.49219C5.18774 3.29665 6.80924 2.625 8.5 2.625C10.1908 2.625 11.8123 3.29665 13.0078 4.49219C14.2034 5.68774 14.875 7.30924 14.875 9Z"
+                stroke="#202020"
+                stroke-opacity="0.7"
+                stroke-width="0.8"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-[#202020] text-sm font-medium">Urutkan berdasarkan:</span>
+            <button class="flex items-center font-semibold text-[#202020] hover:text-secondary underline transition">
+              Direkomendasikan
+              <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                <path d="M16 7.5L12.5 4L16 7.5ZM12.5 4L9 7.5L12.5 4ZM12.5 4V14.5V4ZM2 14.5L5.5 18L2 14.5ZM5.5 18L9 14.5L5.5 18ZM5.5 18V7.5V18Z" fill="#202020" />
+                <path d="M16 7.5L12.5 4M12.5 4L9 7.5M12.5 4V14.5M2 14.5L5.5 18M5.5 18L9 14.5M5.5 18V7.5" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tour Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Borobudur"
+                class="w-full h-48 object-cover" />
+              <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-30 rounded-full flex items-center justify-center hover:bg-opacity-50 transition-colors">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="p-4">
+              <div class="mb-2">
+                <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">DAY TRIP</span>
+              </div>
+              <h3 class="text-lg font-semibold text-secondary mb-3 line-clamp-2">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h3>
+              <div class="flex flex-wrap items-center text-sm text-gray-600 mb-3 gap-1">
+                <span>10 - 11 hours</span>
+                <span>•</span>
+                <span>Skip the line</span>
+                <span>•</span>
+                <span>Small group</span>
+              </div>
+              <div class="flex items-center mb-4">
+                <div class="flex items-center">
+                  <div class="flex text-primary">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                  </div>
+                  <span class="text-sm font-semibold text-secondary ml-2">4.9</span>
+                  <span class="text-sm text-gray-500 ml-1">(870)</span>
+                </div>
+              </div>
+              <div class="border-t pt-3">
+                <div class="text-sm text-gray-500 mb-1">From Rp 798.000</div>
+                <div class="flex items-baseline justify-between">
+                  <div>
+                    <span class="text-xl font-bold text-secondary">Rp 399,000</span>
+                    <span class="text-sm text-gray-500 ml-1">Per person</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Borobudur"
+                class="w-full h-48 object-cover" />
+              <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-30 rounded-full flex items-center justify-center hover:bg-opacity-50 transition-colors">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="p-4">
+              <div class="mb-2">
+                <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">DAY TRIP</span>
+              </div>
+              <h3 class="text-lg font-semibold text-secondary mb-3 line-clamp-2">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h3>
+              <div class="flex flex-wrap items-center text-sm text-gray-600 mb-3 gap-1">
+                <span>10 - 11 hours</span>
+                <span>•</span>
+                <span>Skip the line</span>
+                <span>•</span>
+                <span>Small group</span>
+              </div>
+              <div class="flex items-center mb-4">
+                <div class="flex items-center">
+                  <div class="flex text-primary">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                  </div>
+                  <span class="text-sm font-semibold text-secondary ml-2">4.9</span>
+                  <span class="text-sm text-gray-500 ml-1">(870)</span>
+                </div>
+              </div>
+              <div class="border-t pt-3">
+                <div class="text-sm text-gray-500 mb-1">From Rp 798.000</div>
+                <div class="flex items-baseline justify-between">
+                  <div>
+                    <span class="text-xl font-bold text-secondary">Rp 399,000</span>
+                    <span class="text-sm text-gray-500 ml-1">Per person</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Borobudur"
+                class="w-full h-48 object-cover" />
+              <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-30 rounded-full flex items-center justify-center hover:bg-opacity-50 transition-colors">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="p-4">
+              <div class="mb-2">
+                <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">DAY TRIP</span>
+              </div>
+              <h3 class="text-lg font-semibold text-secondary mb-3 line-clamp-2">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h3>
+              <div class="flex flex-wrap items-center text-sm text-gray-600 mb-3 gap-1">
+                <span>10 - 11 hours</span>
+                <span>•</span>
+                <span>Skip the line</span>
+                <span>•</span>
+                <span>Small group</span>
+              </div>
+              <div class="flex items-center mb-4">
+                <div class="flex items-center">
+                  <div class="flex text-primary">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                  </div>
+                  <span class="text-sm font-semibold text-secondary ml-2">4.9</span>
+                  <span class="text-sm text-gray-500 ml-1">(870)</span>
+                </div>
+              </div>
+              <div class="border-t pt-3">
+                <div class="text-sm text-gray-500 mb-1">From Rp 798.000</div>
+                <div class="flex items-baseline justify-between">
+                  <div>
+                    <span class="text-xl font-bold text-secondary">Rp 399,000</span>
+                    <span class="text-sm text-gray-500 ml-1">Per person</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Borobudur"
+                class="w-full h-48 object-cover" />
+              <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-30 rounded-full flex items-center justify-center hover:bg-opacity-50 transition-colors">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="p-4">
+              <div class="mb-2">
+                <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">DAY TRIP</span>
+              </div>
+              <h3 class="text-lg font-semibold text-secondary mb-3 line-clamp-2">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h3>
+              <div class="flex flex-wrap items-center text-sm text-gray-600 mb-3 gap-1">
+                <span>10 - 11 hours</span>
+                <span>•</span>
+                <span>Skip the line</span>
+                <span>•</span>
+                <span>Small group</span>
+              </div>
+              <div class="flex items-center mb-4">
+                <div class="flex items-center">
+                  <div class="flex text-primary">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                  </div>
+                  <span class="text-sm font-semibold text-secondary ml-2">4.9</span>
+                  <span class="text-sm text-gray-500 ml-1">(870)</span>
+                </div>
+              </div>
+              <div class="border-t pt-3">
+                <div class="text-sm text-gray-500 mb-1">From Rp 798.000</div>
+                <div class="flex items-baseline justify-between">
+                  <div>
+                    <span class="text-xl font-bold text-secondary">Rp 399,000</span>
+                    <span class="text-sm text-gray-500 ml-1">Per person</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Borobudur"
+                class="w-full h-48 object-cover" />
+              <button class="absolute top-3 right-3 w-8 h-8 bg-black bg-opacity-30 rounded-full flex items-center justify-center hover:bg-opacity-50 transition-colors">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="p-4">
+              <div class="mb-2">
+                <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide">DAY TRIP</span>
+              </div>
+              <h3 class="text-lg font-semibold text-secondary mb-3 line-clamp-2">Yogyakarta: Borobudur sunrise(guarantee climb up)& Prambanan</h3>
+              <div class="flex flex-wrap items-center text-sm text-gray-600 mb-3 gap-1">
+                <span>10 - 11 hours</span>
+                <span>•</span>
+                <span>Skip the line</span>
+                <span>•</span>
+                <span>Small group</span>
+              </div>
+              <div class="flex items-center mb-4">
+                <div class="flex items-center">
+                  <div class="flex text-primary">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                  </div>
+                  <span class="text-sm font-semibold text-secondary ml-2">4.9</span>
+                  <span class="text-sm text-gray-500 ml-1">(870)</span>
+                </div>
+              </div>
+              <div class="border-t pt-3">
+                <div class="text-sm text-gray-500 mb-1">From Rp 798.000</div>
+                <div class="flex items-baseline justify-between">
+                  <div>
+                    <span class="text-xl font-bold text-secondary">Rp 399,000</span>
+                    <span class="text-sm text-gray-500 ml-1">Per person</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12 mx-auto main-container container">
+        <!-- Show More Button Component -->
+        <div class="relative flex items-center justify-center">
+          <!-- Left line -->
+          <div class="flex-1 h-[1.5px] bg-primary"></div>
+
+          <!-- Button -->
+          <div class="mx-6 sm:mx-8">
+            <button
+              class="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base font-medium text-primary border-2 border-primary rounded-full h hover:border-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200 ease-in-out transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md">
+              Show more
+            </button>
+          </div>
+
+          <!-- Right line -->
+          <div class="flex-1 h-[1.5px] bg-primary"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#232323] text-white pt-16 pb-8">
+      <div class="main-container mx-auto flex flex-col md:flex-row gap-12 md:gap-0 justify-between items-start px-4">
+        <!-- Kolom Kiri - Logo & Deskripsi -->
+        <div class="w-full md:w-1/3 lg:w-2/5 flex flex-col space-y-6">
+          <div class="flex items-center gap-3">
+            <a href="./index.html" class="text-3xl font text-primary">VISIT NUSA</a>
+          </div>
+          <p class="text-base text-white/80 max-w-xs font-light">Great platform for the job seeker that passionate about startups. Find your dream job easier.</p>
+        </div>
+        <!-- Kolom Tengah - Menu -->
+        <div class="w-full md:w-2/3 flex flex-col md:flex-row gap-12 md:gap-20 justify-between">
+          <div>
+            <h4 class="text-base font-semibold mb-4">About</h4>
+            <ul class="space-y-2 text-base font-light text-white/80">
+              <li><a href="#" class="hover:text-[#FFB300] transition">Companies</a></li>
+              <li><a href="#" class="hover:text-[#FFB300] transition">Pricing</a></li>
+              <li><a href="#" class="hover:text-[#FFB300] transition">Terms</a></li>
+              <li><a href="#" class="hover:text-[#FFB300] transition">Advice</a></li>
+              <li><a href="#" class="hover:text-[#FFB300] transition">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-base font-semibold mb-4">Resources</h4>
+            <ul class="space-y-2 text-base font-light text-white/80">
+              <li><a href="#" class="hover:text-[#FFB300] transition">Help Docs</a></li>
+              <li><a href="#" class="hover:text-[#FFB300] transition">Guide</a></li>
+              <li><a href="#" class="hover:text-[#FFB300] transition">Updates</a></li>
+              <li><a href="#" class="hover:text-[#FFB300] transition">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-base font-semibold mb-4">Get job notifications</h4>
+            <p class="text-white/80 mb-4 text-base font-light">The latest job news, articles, sent to your inbox weekly.</p>
+            <form class="flex gap-2">
+              <input class="bg-white px-4 py-3 rounded-md text-gray-700 font-medium placeholder:text-gray-400 w-[270px] placeholder:font-light placeholder:text-base focus:outline-none" type="email" placeholder="Email Address" />
+              <button class="bg-[#FFB300] hover:bg-[#FFB300] px-6 py-3 rounded-md text-black font-semibold transition" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <hr class="my-10 border-t border-white/20" />
+      <div class="main-container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+        <span class="text-sm text-white/60 mb-4 md:mb-0">2021 @ VisitNusaJogja. All rights reserved.</span>
+        <div class="flex gap-4 justify-center">
+          <!-- Facebook -->
+          <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="15" viewBox="0 0 7 12" fill="none">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M4.35154 12V6.6H5.98984L6.25745 4.2H4.35154V3.03105C4.35154 2.41305 4.36732 1.8 5.23029 1.8H6.10437V0.084082C6.10437 0.058282 5.35356 0 4.594 0C3.00769 0 2.01442 0.994317 2.01442 2.82012V4.2H0.261597V6.6H2.01442V12H4.35154Z"
+                fill="#FFB300" />
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 12" fill="none">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.74397 0.0736373C2.76791 0.117707 1.92192 0.356504 1.2388 1.03721C0.553299 1.72149 0.31763 2.57141 0.273481 3.53798C0.246036 4.14127 0.0855571 8.69895 0.550913 9.89421C0.86473 10.7006 1.4828 11.3206 2.29598 11.6356C2.67543 11.7833 3.10858 11.8833 3.74397 11.9125C9.05678 12.1531 11.0262 12.0221 11.8567 9.89421C12.004 9.51544 12.1055 9.08237 12.1335 8.44812C12.3763 3.11801 12.0941 1.96268 11.1682 1.03721C10.4338 0.304095 9.56986 -0.194952 3.74397 0.0736373ZM3.79288 10.8405C3.21118 10.8143 2.89558 10.7173 2.68498 10.6357C2.15519 10.4297 1.75725 10.0331 1.55261 9.50603C1.19823 8.59782 1.31576 4.2843 1.34738 3.58632C1.37841 2.90263 1.51682 2.27779 1.99888 1.79541C2.59549 1.19986 3.3663 0.907991 8.61468 1.14502C9.29959 1.17599 9.92544 1.31421 10.4087 1.79541C11.0053 2.39095 11.3012 3.16823 11.0602 8.40007C11.0339 8.98073 10.9367 9.2958 10.855 9.50603C10.315 10.8907 9.07288 11.0829 3.79288 10.8405ZM8.67256 2.81376C8.67256 3.20802 8.99295 3.52861 9.3885 3.52861C9.78405 3.52861 10.105 3.20802 10.105 2.81376C10.105 2.41952 9.78405 2.09922 9.3885 2.09922C8.99295 2.09922 8.67256 2.41952 8.67256 2.81376ZM3.14019 5.99276C3.14019 7.68172 4.5118 9.05105 6.20379 9.05105C7.89577 9.05105 9.26738 7.68172 9.26738 5.99276C9.26738 4.3038 7.89577 2.93535 6.20379 2.93535C4.5118 2.93535 3.14019 4.3038 3.14019 5.99276ZM4.21528 5.99276C4.21528 4.89696 5.10543 4.0079 6.20379 4.0079C7.30215 4.0079 8.19229 4.89696 8.19229 5.99276C8.19229 7.08915 7.30215 7.97849 6.20379 7.97849C5.10543 7.97849 4.21528 7.08915 4.21528 5.99276Z"
+                fill="#FFB300" />
+            </svg>
+          </a>
+          <!-- tiktok -->
+          <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 41 48" fill="none">
+              <path
+                d="M30.1451 0H22.0556V32.6956C22.0556 36.5913 18.9444 39.7913 15.0725 39.7913C11.2007 39.7913 8.08938 36.5913 8.08938 32.6956C8.08938 28.8696 11.1315 25.7391 14.8651 25.6V17.3913C6.63744 17.5304 0 24.2783 0 32.6956C0 41.1827 6.77571 48 15.1417 48C23.5075 48 30.2833 41.1131 30.2833 32.6956V15.9304C33.3255 18.1565 37.059 19.4783 41 19.5479V11.3391C34.9157 11.1304 30.1451 6.12173 30.1451 0Z"
+                fill="#FFB300" />
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 44 41" fill="none">
+              <path
+                d="M34.6526 0.8078H41.3995L26.6594 17.6548L44 40.5797H30.4225L19.7881 26.6759L7.61989 40.5797H0.868864L16.6349 22.56L0 0.8078H13.9222L23.5348 13.5165L34.6526 0.8078ZM32.2846 36.5414H36.0232L11.8908 4.63406H7.87892L32.2846 36.5414Z"
+                fill="#FFB300" />
+            </svg>
+          </a>
+          <!-- Twitter -->
+          <a href="#" class="group bg-[#353535] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 hover:bg-[#353535]/80">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 48 48" fill="none">
+              <path
+                d="M0 48L3.374 35.674C1.292 32.066 0.198 27.976 0.2 23.782C0.206 10.67 10.876 0 23.986 0C30.348 0.002 36.32 2.48 40.812 6.976C45.302 11.472 47.774 17.448 47.772 23.804C47.766 36.918 37.096 47.588 23.986 47.588C20.006 47.586 16.084 46.588 12.61 44.692L0 48ZM13.194 40.386C16.546 42.376 19.746 43.568 23.978 43.57C34.874 43.57 43.75 34.702 43.756 23.8C43.76 12.876 34.926 4.02 23.994 4.016C13.09 4.016 4.22 12.884 4.216 23.784C4.214 28.234 5.518 31.566 7.708 35.052L5.71 42.348L13.194 40.386ZM35.968 29.458C35.82 29.21 35.424 29.062 34.828 28.764C34.234 28.466 31.312 27.028 30.766 26.83C30.222 26.632 29.826 26.532 29.428 27.128C29.032 27.722 27.892 29.062 27.546 29.458C27.2 29.854 26.852 29.904 26.258 29.606C25.664 29.308 23.748 28.682 21.478 26.656C19.712 25.08 18.518 23.134 18.172 22.538C17.826 21.944 18.136 21.622 18.432 21.326C18.7 21.06 19.026 20.632 19.324 20.284C19.626 19.94 19.724 19.692 19.924 19.294C20.122 18.898 20.024 18.55 19.874 18.252C19.724 17.956 18.536 15.03 18.042 13.84C17.558 12.682 17.068 12.838 16.704 12.82L15.564 12.8C15.168 12.8 14.524 12.948 13.98 13.544C13.436 14.14 11.9 15.576 11.9 18.502C11.9 21.428 14.03 24.254 14.326 24.65C14.624 25.046 18.516 31.05 24.478 33.624C25.896 34.236 27.004 34.602 27.866 34.876C29.29 35.328 30.586 35.264 31.61 35.112C32.752 34.942 35.126 33.674 35.622 32.286C36.118 30.896 36.118 29.706 35.968 29.458Z"
+                fill="#FFB300" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript untuk interaktivitas
+      document.addEventListener("DOMContentLoaded", function () {
+        // Handle filter buttons
+        const filterButtons = document.querySelectorAll('button[class*="px-4 py-2 border"]:not([class*="space-x-2"])');
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Skip if this is the Filters button
+            if (this.textContent.includes("Filters")) return;
+
+            // Remove active class from all filter buttons
+            filterButtons.forEach((btn) => {
+              if (!btn.textContent.includes("Filters")) {
+                btn.classList.remove("bg-primary", "text-black");
+                btn.classList.add("border-gray-300", "text-gray-600", "bg-white");
+              }
+            });
+            // Add active class to clicked button
+            this.classList.add("bg-primary", "text-black");
+            this.classList.remove("border-gray-300", "text-gray-600", "bg-white");
+          });
+        });
+
+        // Handle Filters button separately
+        const filtersButton = document.querySelector('button[class*="space-x-2"]:has(span)');
+        if (filtersButton) {
+          filtersButton.addEventListener("click", function () {
+            console.log("Filters clicked");
+            // Toggle filters dropdown or modal here
+          });
+        }
+
+        // Handle heart/favorite buttons
+        const heartButtons = document.querySelectorAll('button[class*="absolute top-3 right-3"]');
+        heartButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const svg = this.querySelector("svg");
+            const path = svg.querySelector("path");
+
+            if (path.getAttribute("fill") === "currentColor") {
+              path.setAttribute("fill", "none");
+              svg.classList.remove("text-red-500");
+              svg.classList.add("text-white");
+            } else {
+              path.setAttribute("fill", "currentColor");
+              svg.classList.add("text-red-500");
+              svg.classList.remove("text-white");
+            }
+          });
+        });
+
+        // Handle search functionality
+        const searchInput = document.querySelector('input[placeholder*="Find destinations"]');
+        if (searchInput) {
+          searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              // Implement search functionality here
+              console.log("Search for:", this.value);
+            }
+          });
+        }
+
+        // Handle sort dropdown
+        const sortSelect = document.querySelector("select");
+        if (sortSelect) {
+          sortSelect.addEventListener("change", function () {
+            console.log("Sort by:", this.value);
+            // Implement sorting functionality here
+          });
+        }
+
+        // Dropdown interaktif lokasi
+        const btn = document.getElementById("locationDropdownBtn");
+        const dropdown = document.getElementById("locationDropdown");
+        const selected = document.getElementById("selectedLocation");
+        let isOpen = false;
+
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          dropdown.classList.toggle("hidden");
+          isOpen = !isOpen;
+        });
+
+        dropdown.querySelectorAll("button[data-location]").forEach((item) => {
+          item.addEventListener("click", function () {
+            selected.textContent = this.getAttribute("data-location");
+            dropdown.classList.add("hidden");
+            isOpen = false;
+          });
+        });
+
+        // Tutup dropdown jika klik di luar
+        document.addEventListener("click", function () {
+          if (isOpen) {
+            dropdown.classList.add("hidden");
+            isOpen = false;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

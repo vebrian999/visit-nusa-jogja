@@ -4,7 +4,7 @@
                     <!-- Logo Section -->
                     <div class="flex-shrink-0">
                         <a
-                            href="./index.html"
+                            href="{{ route('landing') }}"
                             class="text-3xl font text-primary"
                             >VISIT NUSA</a
                         >
@@ -17,14 +17,14 @@
                         <ul class="flex space-x-8">
                             <li>
                                 <a
-                                    href="./listing-loker.html"
+                                    href="{{ route('landing') }}"
                                     class="nav-underline transition-colors text-white hover:text-primary"
                                     >Beranda</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="{{ route('paket.index') }}"
                                     class="nav-underline transition-colors text-white hover:text-primary"
                                     >Paket Wisata</a
                                 >
@@ -381,7 +381,7 @@
                                 VN
                             </div>
                             <a
-                                href="./index.html"
+                                href="{{ route('landing') }}"
                                 class="text-2xl font-bold text-primary"
                                 >VISIT NUSA</a
                             >
@@ -414,7 +414,7 @@
                         class="flex-1 px-6 py-6 space-y-1 text-base font-normal max-h-[80vh] overflow-y-auto"
                     >
                         <a
-                            href="./listing-loker.html"
+                            href="{{ route('landing') }}"
                             class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-gray-100 text-gray-700 hover:text-primary transition"
                         >
                             <!-- Icon Home - Masukan icon home disini -->
@@ -428,7 +428,7 @@
                             Beranda
                         </a>
                         <a
-                            href="#"
+                            href="{{ route('paket.index') }}"
                             class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-gray-100 text-gray-700 hover:text-primary transition"
                         >
                             <!-- Icon Package - Masukan icon package disini -->
@@ -441,7 +441,7 @@
                                     />
                                 </svg>
                             </div>
-                            Layanan
+                            Paket Wisata
                         </a>
                         <a
                             href="./listing-perusahaan.html"
