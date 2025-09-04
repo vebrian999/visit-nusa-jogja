@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PaketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,12 @@ Route::get('/faq', function () {
 Route::get('/gallery', function () {
     return view('pages.gallery');
 })->name('gallery');
-Route::get('/detail-paket', function () {
-    return view('pages.detail-paket');
-})->name('detail-paket');
+// Paket Wisata Routes
+Route::get('/paket-wisata', [PaketController::class, 'index'])->name('paket.index');
+Route::get('/paket-wisata/{id}', [PaketController::class, 'show'])->name('paket.show');
+
+
+Route::get('/listing-paket', [PaketController::class, 'listing'])->name('listing-paket');
 
 Route::get('/listing-articles', function () {
     return view('pages.listing-articles');
