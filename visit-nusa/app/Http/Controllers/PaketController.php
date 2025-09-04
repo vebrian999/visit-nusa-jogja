@@ -104,16 +104,46 @@ class PaketController extends Controller
 
     public function show($id)
     {
-        $paket = PaketWisata::active()->findOrFail($id);
+        // Load paket with all related data
+        $paket = PaketWisata::with([
+            'galeriPakets' => function($query) {
+                $query->orderBy('urutan');
+            },
+            'itineraryPakets' => function($query) {
+                $query->orderBy('urutan');
+            },
+            'highlightPakets' => function($query) {
+                $query->orderBy('urutan');
+            },
+            'includeExcludePakets' => function($query) {
+                $query->orderBy('tipe')->orderBy('urutan');
+            },
+            'paketHargas',
+            'reviewPakets' => function($query) {
+                $query->with(['user', 'galeriReviews'])
+                      ->orderBy('rating', 'desc')
+                      ->limit(10);
+            }
+        ])->active()->findOrFail($id);
         
         // Related packages
         $relatedPakets = PaketWisata::active()
             ->where('id', '!=', $id)
-            ->where('tipe', $paket->tipe)
+            ->where(function($query) use ($paket) {
+                $query->where('tipe', $paket->tipe)
+                      ->orWhere('lokasi', 'like', '%' . explode(',', $paket->lokasi)[0] . '%');
+            })
             ->orderBy('rating', 'DESC')
-            ->limit(4)
+            ->limit(6)
             ->get();
+            
+        // Get price data for the booking form
+        $priceData = [
+            'weekday' => $paket->paketHargas->where('tipe_hari', 'WEEKDAY')->first()->harga ?? $paket->harga_awal,
+            'weekend' => $paket->paketHargas->where('tipe_hari', 'WEEKEND')->first()->harga ?? ($paket->harga_awal * 1.2),
+            'holiday' => $paket->paketHargas->where('tipe_hari', 'HOLIDAY')->first()->harga ?? ($paket->harga_awal * 1.5),
+        ];
 
-        return view('pages.detail-paket', compact('paket', 'relatedPakets'));
+        return view('pages.detail-paket', compact('paket', 'relatedPakets', 'priceData'));
     }
 }

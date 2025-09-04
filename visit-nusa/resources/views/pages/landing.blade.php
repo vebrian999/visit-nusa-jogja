@@ -129,7 +129,7 @@
             <img src="{{ asset('img/banner-index.png') }}" alt="Banner" class="absolute inset-0 w-full h-full object-cover" />
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black bg-opacity-10"></div>
-            
+
             <!-- Banner Content -->
             <div class="relative z-30 flex flex-col items-center justify-center h-full px-6 text-center">
               <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Booking Mudah, Bayar Setengah Dulu!</h2>
@@ -144,14 +144,14 @@
         </section>
 
       
-      
+
         <!-- section kategori -->
         <section class="container mx-auto py-16 main-container">
           <!-- Kategori Label -->
           <div class="flex justify-center mb-6">
             <span class="px-6 py-2 rounded-full bg-[#FFB300] text-black font-semibold text-sm shadow">Kategori Paket Wisata Jogja</span>
           </div>
-          <!-- Judul -->
+          <!-- Judul -->c
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Temukan <span class="text-[#FFB300] underline decoration-[#FFB300] decoration-2">Liburan Impian</span> Anda di Kota Budaya</h2>
           <!-- Grid Card -->
           <div class="flex flex-col gap-6 justify-center mb-10 items-center">

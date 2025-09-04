@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->text('deskripsi')->nullable();
-            $table->string('gambar'); // path gambar
+            $table->text('full_description')->nullable(); // Deskripsi lengkap
+            $table->text('highlights')->nullable(); // Highlight dalam format JSON atau teks
+            $table->string('gambar'); // path gambar utama/cover
             $table->string('durasi'); // contoh: "3 Hari 2 Malam"
             $table->enum('tipe', ['DAY_TRIP', 'MULTI_DAY']); // DAY_TRIP, MULTI_DAY
             $table->decimal('harga_awal', 10, 2);

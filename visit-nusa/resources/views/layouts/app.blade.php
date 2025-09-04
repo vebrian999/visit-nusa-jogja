@@ -17,12 +17,9 @@
   <body class="bg-white">
     @include('includes.navbar')
 
-    <main>
-      <div id="content">
-        @yield('content')
-      </div>
-
-    </main>
+    <div id="content">
+      @yield('content')
+    </div>
           @include('includes.footer')
     @stack('scripts')
   </body>

@@ -11,7 +11,8 @@ class PaketWisata extends Model
 
     protected $fillable = [
         'nama', 'deskripsi', 'gambar', 'durasi', 'tipe', 'harga_awal', 'harga_diskon',
-        'tipe_tour', 'group_type', 'rating', 'total_review', 'lokasi', 'is_active'
+        'tipe_tour', 'group_type', 'rating', 'total_review', 'lokasi', 'is_active',
+        'full_description', 'highlights'
     ];
 
     protected $casts = [
@@ -66,5 +67,75 @@ class PaketWisata extends Model
             return round((($this->harga_awal - $this->harga_diskon) / $this->harga_awal) * 100);
         }
         return 0;
+    }
+    
+    // Relationships
+    public function galeriPakets()
+    {
+        return $this->hasMany(GaleriPaket::class);
+    }
+    
+    public function itineraryPakets()
+    {
+        return $this->hasMany(ItineraryPaket::class);
+    }
+    
+    public function highlightPakets()
+    {
+        return $this->hasMany(HighlightPaket::class);
+    }
+    
+    public function includeExcludePakets()
+    {
+        return $this->hasMany(IncludeExcludePaket::class);
+    }
+    
+    public function reviewPakets()
+    {
+        return $this->hasMany(ReviewPaket::class);
+    }
+    
+    public function paketHargas()
+    {
+        return $this->hasMany(PaketHarga::class);
+    }
+    
+    // Helper methods for related data
+    public function getGalleryAttribute()
+    {
+        $gallery = $this->galeriPakets()->orderBy('urutan')->pluck('gambar')->toArray();
+        
+        // If no gallery images, return the main image
+        if (empty($gallery) && $this->gambar) {
+            return [$this->gambar];
+        }
+        
+        return $gallery;
+    }
+    
+    public function getIncludesAttribute()
+    {
+        return $this->includeExcludePakets()
+            ->where('tipe', 'INCLUDE')
+            ->orderBy('urutan')
+            ->pluck('teks')
+            ->toArray();
+    }
+    
+    public function getExcludesAttribute()
+    {
+        return $this->includeExcludePakets()
+            ->where('tipe', 'EXCLUDE')
+            ->orderBy('urutan')
+            ->pluck('teks')
+            ->toArray();
+    }
+    
+    public function getHighlightPointsAttribute()
+    {
+        return $this->highlightPakets()
+            ->orderBy('urutan')
+            ->pluck('teks')
+            ->toArray();
     }
 }
