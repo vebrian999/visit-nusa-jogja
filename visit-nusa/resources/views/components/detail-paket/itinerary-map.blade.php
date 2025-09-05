@@ -1,90 +1,319 @@
 {{-- Itinerary and Map Component --}}
 @props(['paket'])
 
-<div class="">
-  <div class="rounded-2xl overflow-hidden">
-    <div class="mb-6">
-      <h2 class="text-2xl font-bold text-gray-900 m-6">Itinerary</h2>
-    </div>
-  <div class="flex flex-col lg:flex-row">
-    <!-- Left Panel - Itinerary -->
-    <div class="w-full lg:w-2/5 px-6">
-      @include('pages.itinerary-section')
-    </div>
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <!-- Right Panel - Map -->
-    <div class="w-full lg:w-3/5">
-      <div class="h-96 lg:h-[400px]">
-        <div id="map" class="relative z-10 w-full h-[400px]"></div>
-
-        <!-- Map Controls -->
-        <div class="absolute top-10 right-28 z-20">
-          <button id="recenterBtn" class="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-700 transition-colors">Re-center</button>
-        </div>
-
-        <!-- Legend - Below Map -->
-        <div class="mt-5">
-          <div class="flex items-center space-x-5 text-sm">
-            <div class="legend-item flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
-                  fill="#FFB300"
-                  stroke="#202020"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M9.8608 16V7.27273H13.1335C13.804 7.27273 14.3665 7.39773 14.821 7.64773C15.2784 7.89773 15.6236 8.24148 15.8565 8.67898C16.0923 9.11364 16.2102 9.60795 16.2102 10.1619C16.2102 10.7216 16.0923 11.2187 15.8565 11.6534C15.6207 12.0881 15.2727 12.4304 14.8125 12.6804C14.3523 12.9276 13.7855 13.0511 13.1122 13.0511H10.9432V11.7514H12.8991C13.2912 11.7514 13.6122 11.6832 13.8622 11.5469C14.1122 11.4105 14.2969 11.223 14.4162 10.9844C14.5384 10.7457 14.5994 10.4716 14.5994 10.1619C14.5994 9.85227 14.5384 9.57955 14.4162 9.34375C14.2969 9.10795 14.1108 8.92472 13.858 8.79403C13.608 8.66051 13.2855 8.59375 12.8906 8.59375H11.4418V16H9.8608Z"
-                  fill="#202020" />
-              </svg>
-              <span class="text-secondary font-medium text-sm">Pickup Location</span>
+<div class="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden">
+  <div class="">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">Itinerary</h2>
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Left Panel - Itinerary -->
+      <div class="w-full lg:w-2/5 px-2">
+        <div class="relative">
+          <!-- Pickup Locations -->
+          <div class="flex items-start mb-6">
+            <div class="flex flex-col items-center mr-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none">
+                  <path d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z" fill="#FFB300" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.8608 16V7.27273H13.1335C13.804 7.27273 14.3665 7.39773 14.821 7.64773C15.2784 7.89773 15.6236 8.24148 15.8565 8.67898C16.0923 9.11364 16.2102 9.60795 16.2102 10.1619C16.2102 10.7216 16.0923 11.2187 15.8565 11.6534C15.6207 12.0881 15.2727 12.4304 14.8125 12.6804C14.3523 12.9276 13.7855 13.0511 13.1122 13.0511H10.9432V11.7514H12.8991C13.2912 11.7514 13.6122 11.6832 13.8622 11.5469C14.1122 11.4105 14.2969 11.223 14.4162 10.9844C14.5384 10.7457 14.5994 10.4716 14.5994 10.1619C14.5994 9.85227 14.5384 9.57955 14.4162 9.34375C14.2969 9.10795 14.1108 8.92472 13.858 8.79403C13.608 8.66051 13.2855 8.59375 12.8906 8.59375H11.4418V16H9.8608Z" fill="#202020"/>
+                </svg>
+              </div>
+              <div class="w-1 h-16 dotted-line mt-2"></div>
             </div>
-            <div class="legend-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
-                  fill="#FFB300"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-              <span class="text-secondary font-medium text-sm">Destinations</span>
-            </div>
-            <div class="legend-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
-                  fill="#FFB300"
-                  stroke="#202020"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M11.8182 16H8.8608V7.27273H11.8778C12.7443 7.27273 13.4886 7.44744 14.1108 7.79688C14.7358 8.14347 15.2159 8.64205 15.5511 9.29261C15.8864 9.94318 16.054 10.7216 16.054 11.6278C16.054 12.5369 15.8849 13.3182 15.5469 13.9716C15.2116 14.625 14.7273 15.1264 14.0938 15.4759C13.4631 15.8253 12.7045 16 11.8182 16ZM10.4418 14.6321H11.7415C12.3494 14.6321 12.8565 14.5213 13.2628 14.2997C13.669 14.0753 13.9744 13.7415 14.179 13.2983C14.3835 12.8523 14.4858 12.2955 14.4858 11.6278C14.4858 10.9602 14.3835 10.4062 14.179 9.96591C13.9744 9.52273 13.6719 9.19176 13.2713 8.97301C12.8736 8.75142 12.3793 8.64062 11.7884 8.64062H10.4418V14.6321Z"
-                  fill="#202020" />
-              </svg>
-              <span class="text-secondary font-medium text-sm">Drop-off Location</span>
+            <div class="flex-1 pt-1">
+              <h3 class="font-semibold text-gray-900 mb-1">3 pickup location options:</h3>
+              <p class="text-sm text-gray-600">Central Java, Special Region of Yogyakarta,</p>
+              <button class="text-amber-600 text-sm font-medium hover:underline">See more</button>
             </div>
           </div>
+
+          <!-- Car Journey 1 -->
+          <div class="flex items-start mb-6">
+            <div class="flex flex-col items-center mr-4">
+              <div class="w-10 h-10 border-2 border-secondary rounded-full flex items-center justify-center text-white text-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M8.78418 3.5H16.2158C17.591 3.5 18.817 4.29825 19.3613 5.50488L19.4609 5.75195L20.9053 9.79004L20.9805 10.001L21.1875 10.085C21.962 10.3989 22.5 11.1431 22.5 12V19.7139C22.5 20.1392 22.1471 20.5 21.6875 20.5H20.375C19.9154 20.5 19.5625 20.1392 19.5625 19.7139V17.9287H5.4375V19.7139C5.4375 20.1392 5.0846 20.5 4.625 20.5H3.3125C2.8529 20.5 2.5 20.1392 2.5 19.7139V12C2.5 11.1431 3.03804 10.3989 3.8125 10.085L4.01953 10.001L4.09473 9.79004L5.53906 5.75195C6.02005 4.40842 7.31721 3.5 8.78418 3.5ZM5.9375 12.1426C4.94515 12.1426 4.125 12.9317 4.125 13.9287C4.12508 14.9256 4.9452 15.7139 5.9375 15.7139C6.9298 15.7139 7.74992 14.9256 7.75 13.9287C7.75 12.9317 6.92985 12.1426 5.9375 12.1426ZM19.0625 12.1426C18.0701 12.1426 17.25 12.9317 17.25 13.9287C17.2501 14.9256 18.0702 15.7139 19.0625 15.7139C20.0548 15.7139 20.8749 14.9256 20.875 13.9287C20.875 12.9317 20.0549 12.1426 19.0625 12.1426ZM8.78418 5.07129C8.06791 5.07129 7.41843 5.48764 7.12793 6.13086L7.07422 6.2627L6.00391 9.26074L5.76562 9.92871H19.2344L18.9961 9.26074L17.9258 6.2627L17.8721 6.13086C17.5816 5.48764 16.9321 5.07129 16.2158 5.07129H8.78418Z" fill="#202020" stroke="#202020"/>
+                </svg>
+              </div>
+              <div class="w-1 h-24 dotted-line mt-2"></div>
+            </div>
+            <div class="flex-1 pt-1">
+              <div class="bg-gray-50 rounded-lg p-3 mb-2">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-semibold text-gray-900">Car</span>
+                  <span class="text-sm text-gray-600">(35 minutes)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prambanan -->
+          <div class="flex items-start mb-6">
+            <div class="flex flex-col items-center mr-4">
+              <div class="w-10 h-10 border-2 border-secondary rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 17 21" fill="none">
+                  <path d="M16 8.625C16 15.767 8.5 19.875 8.5 19.875C8.5 19.875 1 15.767 1 8.625C1 6.63588 1.79018 4.72822 3.1967 3.3217C4.60322 1.91518 6.51088 1.125 8.5 1.125C10.4891 1.125 12.3968 1.91518 13.8033 3.3217C15.2098 4.72822 16 6.63588 16 8.625Z" fill="#FFB300" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M11.5 8.625C11.5 9.42065 11.1839 10.1837 10.6213 10.7463C10.0587 11.3089 9.29565 11.625 8.5 11.625C7.70435 11.625 6.94129 11.3089 6.37868 10.7463C5.81607 10.1837 5.5 9.42065 5.5 8.625C5.5 7.82935 5.81607 7.06629 6.37868 6.50368C6.94129 5.94107 7.70435 5.625 8.5 5.625C9.29565 5.625 10.0587 5.94107 10.6213 6.50368C11.1839 7.06629 11.5 7.82935 11.5 8.625Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="w-1 h-24 dotted-line mt-2"></div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="font-bold text-gray-900 mb-2">Prambanan</h3>
+              <p class="text-sm text-gray-600 mb-2">Break time, Photo stop, Visit, Guided tour, Free time, Sightseeing, Walk</p>
+              <p class="text-sm font-medium text-secondary">(2 hours)</p>
+              <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded mt-2">Optional</span>
+            </div>
+          </div>
+
+          <!-- Car Journey 2 -->
+          <div class="flex items-start mb-6">
+            <div class="flex flex-col items-center mr-4">
+              <div class="w-10 h-10 border-2 border-secondary rounded-full flex items-center justify-center text-white text-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M8.78418 3.5H16.2158C17.591 3.5 18.817 4.29825 19.3613 5.50488L19.4609 5.75195L20.9053 9.79004L20.9805 10.001L21.1875 10.085C21.962 10.3989 22.5 11.1431 22.5 12V19.7139C22.5 20.1392 22.1471 20.5 21.6875 20.5H20.375C19.9154 20.5 19.5625 20.1392 19.5625 19.7139V17.9287H5.4375V19.7139C5.4375 20.1392 5.0846 20.5 4.625 20.5H3.3125C2.8529 20.5 2.5 20.1392 2.5 19.7139V12C2.5 11.1431 3.03804 10.3989 3.8125 10.085L4.01953 10.001L4.09473 9.79004L5.53906 5.75195C6.02005 4.40842 7.31721 3.5 8.78418 3.5ZM5.9375 12.1426C4.94515 12.1426 4.125 12.9317 4.125 13.9287C4.12508 14.9256 4.9452 15.7139 5.9375 15.7139C6.9298 15.7139 7.74992 14.9256 7.75 13.9287C7.75 12.9317 6.92985 12.1426 5.9375 12.1426ZM19.0625 12.1426C18.0701 12.1426 17.25 12.9317 17.25 13.9287C17.2501 14.9256 18.0702 15.7139 19.0625 15.7139C20.0548 15.7139 20.8749 14.9256 20.875 13.9287C20.875 12.9317 20.0549 12.1426 19.0625 12.1426ZM8.78418 5.07129C8.06791 5.07129 7.41843 5.48764 7.12793 6.13086L7.07422 6.2627L6.00391 9.26074L5.76562 9.92871H19.2344L18.9961 9.26074L17.9258 6.2627L17.8721 6.13086C17.5816 5.48764 16.9321 5.07129 16.2158 5.07129H8.78418Z" fill="#202020" stroke="#202020"/>
+                </svg>
+              </div>
+              <div class="w-1 h-24 dotted-line mt-2"></div>
+            </div>
+            <div class="flex-1 pt-1">
+              <div class="bg-gray-50 rounded-lg p-3 mb-2">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-semibold text-gray-900">Car</span>
+                  <span class="text-sm text-gray-600">(75 minutes)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Borobudur -->
+          <div class="flex items-start mb-6">
+            <div class="flex flex-col items-center mr-4">
+              <div class="w-10 h-10 border-2 border-secondary rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 17 21" fill="none">
+                  <path d="M16 8.625C16 15.767 8.5 19.875 8.5 19.875C8.5 19.875 1 15.767 1 8.625C1 6.63588 1.79018 4.72822 3.1967 3.3217C4.60322 1.91518 6.51088 1.125 8.5 1.125C10.4891 1.125 12.3968 1.91518 13.8033 3.3217C15.2098 4.72822 16 6.63588 16 8.625Z" fill="#FFB300" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M11.5 8.625C11.5 9.42065 11.1839 10.1837 10.6213 10.7463C10.0587 11.3089 9.29565 11.625 8.5 11.625C7.70435 11.625 6.94129 11.3089 6.37868 10.7463C5.81607 10.1837 5.5 9.42065 5.5 8.625C5.5 7.82935 5.81607 7.06629 6.37868 6.50368C6.94129 5.94107 7.70435 5.625 8.5 5.625C9.29565 5.625 10.0587 5.94107 10.6213 6.50368C11.1839 7.06629 11.5 7.82935 11.5 8.625Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="w-1 h-24 dotted-line mt-2"></div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="font-bold text-gray-900 mb-2">Borobudur</h3>
+              <p class="text-sm text-gray-600 mb-2">Break time, Photo stop, Visit, Guided tour, Free time, Sightseeing, Walk</p>
+              <p class="text-sm font-medium text-secondary">(2 hours)</p>
+              <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded mt-2">Optional</span>
+            </div>
+          </div>
+
+          <!-- Car Journey 3 -->
+          <div class="flex items-start mb-6">
+            <div class="flex flex-col items-center mr-4">
+              <div class="w-10 h-10 border-2 border-secondary rounded-full flex items-center justify-center text-white text-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M8.78418 3.5H16.2158C17.591 3.5 18.817 4.29825 19.3613 5.50488L19.4609 5.75195L20.9053 9.79004L20.9805 10.001L21.1875 10.085C21.962 10.3989 22.5 11.1431 22.5 12V19.7139C22.5 20.1392 22.1471 20.5 21.6875 20.5H20.375C19.9154 20.5 19.5625 20.1392 19.5625 19.7139V17.9287H5.4375V19.7139C5.4375 20.1392 5.0846 20.5 4.625 20.5H3.3125C2.8529 20.5 2.5 20.1392 2.5 19.7139V12C2.5 11.1431 3.03804 10.3989 3.8125 10.085L4.01953 10.001L4.09473 9.79004L5.53906 5.75195C6.02005 4.40842 7.31721 3.5 8.78418 3.5ZM5.9375 12.1426C4.94515 12.1426 4.125 12.9317 4.125 13.9287C4.12508 14.9256 4.9452 15.7139 5.9375 15.7139C6.9298 15.7139 7.74992 14.9256 7.75 13.9287C7.75 12.9317 6.92985 12.1426 5.9375 12.1426ZM19.0625 12.1426C18.0701 12.1426 17.25 12.9317 17.25 13.9287C17.2501 14.9256 18.0702 15.7139 19.0625 15.7139C20.0548 15.7139 20.8749 14.9256 20.875 13.9287C20.875 12.9317 20.0549 12.1426 19.0625 12.1426ZM8.78418 5.07129C8.06791 5.07129 7.41843 5.48764 7.12793 6.13086L7.07422 6.2627L6.00391 9.26074L5.76562 9.92871H19.2344L18.9961 9.26074L17.9258 6.2627L17.8721 6.13086C17.5816 5.48764 16.9321 5.07129 16.2158 5.07129H8.78418Z" fill="#202020" stroke="#202020"/>
+                </svg>
+              </div>
+              <div class="w-1 h-8 dotted-line mt-2"></div>
+            </div>
+            <div class="flex-1 pt-1">
+              <div class="bg-gray-50 rounded-lg p-3 mb-2">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-semibold text-gray-900">Car</span>
+                  <span class="text-sm text-gray-600">(90 minutes)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drop-off -->
+          <div class="flex items-start">
+            <div class="flex flex-col items-center mr-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 25" fill="none">
+                  <path d="M19.5 11C19.5 18.142 12 22.25 12 22.25C12 22.25 4.5 18.142 4.5 11C4.5 9.01088 5.29018 7.10322 6.6967 5.6967C8.10322 4.29018 10.0109 3.5 12 3.5C13.9891 3.5 15.8968 4.29018 17.3033 5.6967C18.7098 7.10322 19.5 9.01088 19.5 11Z" fill="#FFB300" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M11.8182 16.5H8.8608V7.77273H11.8778C12.7443 7.77273 13.4886 7.94744 14.1108 8.29688C14.7358 8.64347 15.2159 9.14205 15.5511 9.79261C15.8864 10.4432 16.054 11.2216 16.054 12.1278C16.054 13.0369 15.8849 13.8182 15.5469 14.4716C15.2116 15.125 14.7273 15.6264 14.0938 15.9759C13.4631 16.3253 12.7045 16.5 11.8182 16.5ZM10.4418 15.1321H11.7415C12.3494 15.1321 12.8565 15.0213 13.2628 14.7997C13.669 14.5753 13.9744 14.2415 14.179 13.7983C14.3835 13.3523 14.4858 12.7955 14.4858 12.1278C14.4858 11.4602 14.3835 10.9062 14.179 10.4659C13.9744 10.0227 13.6719 9.69176 13.2713 9.47301C12.8736 9.25142 12.3793 9.14062 11.7884 9.14062H10.4418V15.1321Z" fill="#202020"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="font-semibold text-gray-900 mb-1">3 drop-off locations:</h3>
+              <p class="text-sm text-gray-600">Central Java, Special Region of Yogyakarta,</p>
+              <button class="text-amber-600 text-sm font-medium hover:underline">See more</button>
+            </div>
+          </div>
+
+          <!-- Reference Note -->
+          <div class="mt-8 pt-4 border-t border-gray-200">
+            <p class="text-xs text-gray-500 flex items-center">
+              <span class="w-4 h-4 border border-gray-400 rounded-full mr-2 flex items-center justify-center">
+                <span class="text-xs">i</span>
+              </span>
+              For reference only. Itineraries are subject to change.
+            </p>
+          </div>
         </div>
+      </div>
+      <!-- Right Panel - Map -->
+      <div class="w-full lg:w-3/5">
+        <div class="relative h-80 md:h-96 lg:h-[400px] w-full rounded-xl overflow-hidden border border-gray-100 bg-gray-50">
+          <div id="map" class="w-full h-full z-10"></div>
+          <!-- Map Controls -->
+          <div class="absolute top-4 right-4 z-20">
+            <button id="recenterBtn" class="bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-700 transition-colors text-sm">Re-center</button>
+          </div>
+          <!-- Legend - Below Map -->
+
+        </div>
+
+            <div class="py-2 flex items-center mt-2 gap-4 ">
+            <div class="flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"><path d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z" fill="#FFB300" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.8608 16V7.27273H13.1335C13.804 7.27273 14.3665 7.39773 14.821 7.64773C15.2784 7.89773 15.6236 8.24148 15.8565 8.67898C16.0923 9.11364 16.2102 9.60795 16.2102 10.1619C16.2102 10.7216 16.0923 11.2187 15.8565 11.6534C15.6207 12.0881 15.2727 12.4304 14.8125 12.6804C14.3523 12.9276 13.7855 13.0511 13.1122 13.0511H10.9432V11.7514H12.8991C13.2912 11.7514 13.6122 11.6832 13.8622 11.5469C14.1122 11.4105 14.2969 11.223 14.4162 10.9844C14.5384 10.7457 14.5994 10.4716 14.5994 10.1619C14.5994 9.85227 14.5384 9.57955 14.4162 9.34375C14.2969 9.10795 14.1108 8.92472 13.858 8.79403C13.608 8.66051 13.2855 8.59375 12.8906 8.59375H11.4418V16H9.8608Z" fill="#202020"/></svg>
+              <span class="text-secondary font-medium text-xs ml-1">Pickup Location</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"><path d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z" fill="#FFB300" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-secondary font-medium text-xs ml-1">Destinations</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"><path d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z" fill="#FFB300" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.8182 16H8.8608V7.27273H11.8778C12.7443 7.27273 13.4886 7.44744 14.1108 7.79688C14.7358 8.14347 15.2159 8.64205 15.5511 9.29261C15.8864 9.94318 16.054 10.7216 16.054 11.6278C16.054 12.5369 15.8849 13.3182 15.5469 13.9716C15.2116 14.625 14.7273 15.1264 14.0938 15.4759C13.4631 15.8253 12.7045 16 11.8182 16ZM10.4418 14.6321H11.7415C12.3494 14.6321 12.8565 14.5213 13.2628 14.2997C13.669 14.0753 13.9744 13.7415 14.179 13.2983C14.3835 12.8523 14.4858 12.2955 14.4858 11.6278C14.4858 10.9602 14.3835 10.4062 14.179 9.96591C13.9744 9.52273 13.6719 9.19176 13.2713 8.97301C12.8736 8.75142 12.3793 8.64062 11.7884 8.64062H10.4418V14.6321Z" fill="#202020"/></svg>
+              <span class="text-secondary font-medium text-xs ml-1">Drop-off Location</span>
+            </div>
+          </div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
-<!-- Map will be initialized in @push('scripts') section -->
-<div id="mapLoadingIndicator" class="flex items-center justify-center h-full bg-gray-100">
-  <div class="text-center">
-    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mx-auto mb-2"></div>
-    <p class="text-gray-600">Loading map...</p>
-  </div>
-</div>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize the map
+  const map = L.map("map").setView([-7.8014, 110.3644], 10);
+
+  // Add Google Maps-style tiles (satellite/hybrid view)
+  L.tileLayer("https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}", {
+    attribution: "© Google",
+    maxZoom: 18,
+  }).addTo(map);
+
+  // Define locations
+  const locations = {
+    pickupLocations: [
+      { name: "Yogyakarta Center", lat: -7.7956, lng: 110.3695, type: "pickup" },
+      { name: "Adisucipto Airport", lat: -7.7886, lng: 110.4317, type: "pickup" },
+      { name: "Tugu Station", lat: -7.7892, lng: 110.3639, type: "pickup" },
+    ],
+    destinations: [
+      { name: "Prambanan Temple", lat: -7.752, lng: 110.4915, type: "destination", number: 1 },
+      { name: "Borobudur Temple", lat: -7.6079, lng: 110.2038, type: "destination", number: 2 },
+    ],
+    dropoffLocations: [
+      { name: "Yogyakarta Center", lat: -7.7956, lng: 110.3695, type: "dropoff" },
+      { name: "Malioboro Street", lat: -7.7926, lng: 110.3656, type: "dropoff" },
+      { name: "Kraton Yogyakarta", lat: -7.8053, lng: 110.3642, type: "dropoff" },
+    ],
+  };
+
+  // Custom SVG icons as Leaflet DivIcons
+  function createSVGIcon(svgString) {
+    return L.divIcon({
+      html: svgString,
+      className: "",
+      iconSize: [35, 35],
+      iconAnchor: [17, 35],
+      popupAnchor: [0, -35],
+    });
+  }
+
+  // SVG for pickup
+  const pickupSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"><path d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z" fill="#FFB300" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.8608 16V7.27273H13.1335C13.804 7.27273 14.3665 7.39773 14.821 7.64773C15.2784 7.89773 15.6236 8.24148 15.8565 8.67898C16.0923 9.11364 16.2102 9.60795 16.2102 10.1619C16.2102 10.7216 16.0923 11.2187 15.8565 11.6534C15.6207 12.0881 15.2727 12.4304 14.8125 12.6804C14.3523 12.9276 13.7855 13.0511 13.1122 13.0511H10.9432V11.7514H12.8991C13.2912 11.7514 13.6122 11.6832 13.8622 11.5469C14.1122 11.4105 14.2969 11.223 14.4162 10.9844C14.5384 10.7457 14.5994 10.4716 14.5994 10.1619C14.5994 9.85227 14.5384 9.57955 14.4162 9.34375C14.2969 9.10795 14.1108 8.92472 13.858 8.79403C13.608 8.66051 13.2855 8.59375 12.8906 8.59375H11.4418V16H9.8608Z" fill="#202020"/></svg>`;
+  // SVG for destination
+  const destinationSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"><path d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z" fill="#FFB300" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  // SVG for dropoff
+  const dropoffSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"><path d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z" fill="#FFB300" stroke="#202020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.8182 16H8.8608V7.27273H11.8778C12.7443 7.27273 13.4886 7.44744 14.1108 7.79688C14.7358 8.14347 15.2159 8.64205 15.5511 9.29261C15.8864 9.94318 16.054 10.7216 16.054 11.6278C16.054 12.5369 15.8849 13.3182 15.5469 13.9716C15.2116 14.625 14.7273 15.1264 14.0938 15.4759C13.4631 15.8253 12.7045 16 11.8182 16ZM10.4418 14.6321H11.7415C12.3494 14.6321 12.8565 14.5213 13.2628 14.2997C13.669 14.0753 13.9744 13.7415 14.179 13.2983C14.3835 12.8523 14.4858 12.2955 14.4858 11.6278C14.4858 10.9602 14.3835 10.4062 14.179 9.96591C13.9744 9.52273 13.6719 9.19176 13.2713 8.97301C12.8736 8.75142 12.3793 8.64062 11.7884 8.64062H10.4418V14.6321Z" fill="#202020"/></svg>`;
+
+  // Create Leaflet icons
+  const pickupIcon = createSVGIcon(pickupSVG);
+  const destinationIcon = createSVGIcon(destinationSVG);
+  const dropoffIcon = createSVGIcon(dropoffSVG);
+
+  // Array for all markers
+  const allMarkers = [];
+
+  // Add pickup locations
+  locations.pickupLocations.forEach((location, index) => {
+    const marker = L.marker([location.lat, location.lng], { icon: pickupIcon })
+      .addTo(map)
+      .bindPopup(`<strong>Pickup Location ${index + 1}</strong><br>${location.name}`);
+    allMarkers.push(marker);
+  });
+
+  // Add destinations
+  locations.destinations.forEach((location, index) => {
+    const marker = L.marker([location.lat, location.lng], { icon: destinationIcon })
+      .addTo(map)
+      .bindPopup(`<strong>Destination ${index + 1}</strong><br>${location.name}`);
+    allMarkers.push(marker);
+  });
+
+  // Add drop-off locations
+  locations.dropoffLocations.forEach((location, index) => {
+    const marker = L.marker([location.lat, location.lng], { icon: dropoffIcon })
+      .addTo(map)
+      .bindPopup(`<strong>Drop-off Location ${index + 1}</strong><br>${location.name}`);
+    allMarkers.push(marker);
+  });
+
+  // Create route lines (simplified)
+  const routeCoordinates = [
+    [locations.pickupLocations[0].lat, locations.pickupLocations[0].lng],
+    [locations.destinations[0].lat, locations.destinations[0].lng],
+    [locations.destinations[1].lat, locations.destinations[1].lng],
+    [locations.dropoffLocations[0].lat, locations.dropoffLocations[0].lng],
+  ];
+
+  const polyline = L.polyline(routeCoordinates, {
+    color: "#f59e0b",
+    weight: 2,
+    opacity: 0.8,
+    dashArray: "8, 8",
+  }).addTo(map);
+
+  // Re-center button functionality
+  const recenterBtn = document.getElementById("recenterBtn");
+  if (recenterBtn) {
+    recenterBtn.addEventListener("click", function () {
+      const group = new L.featureGroup(allMarkers);
+      map.fitBounds(group.getBounds().pad(0.1));
+    });
+  }
+
+  // Initial fit to bounds
+  setTimeout(() => {
+    const group = new L.featureGroup(allMarkers);
+    map.fitBounds(group.getBounds().pad(0.1));
+  }, 100);
+
+  // Responsive map resize
+  window.addEventListener("resize", function () {
+    map.invalidateSize();
+  });
+
+  // Interactive timeline hover effects (if needed)
+  const timelineItems = document.querySelectorAll("[data-location]");
+  timelineItems.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      const locationName = this.getAttribute("data-location");
+      // Highlight corresponding marker
+      allMarkers.forEach((marker) => {
+        if (marker.getPopup().getContent().includes(locationName)) {
+          marker.openPopup();
+        }
+      });
+    });
+  });
+});
+</script>
